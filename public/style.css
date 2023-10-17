@@ -1,0 +1,99 @@
+#carouselExample{
+    height: 30%;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.map{
+    float: right;
+    margin-right: 50px;
+}
+.hotels{
+    display: inline-block;
+    margin-left: 50px;
+    width: 40%;
+}
+.form-inici-sessio{
+    text-align: center;
+}
+.form-registrar {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.btn-primary2 {
+    display: block;
+    margin: 0 auto;
+    width: 360px;
+    background-color: #0d6efd;
+    color: white;
+}
+
+.mb-3.form-check {
+    float: right;
+}
+
+.account {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.return {
+    float: right;
+    margin-top: 20px;
+    text-decoration: none;
+    color: black;
+}
+#carouselExample{
+    height: 30%;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.map{
+    float: right;
+    margin-right: 50px;
+}
+.hotels{
+    display: inline-block;
+    margin-left: 50px;
+    width: 40%;
+}
+.form-inici-sessio{
+    text-align: center;
+}
+.form-registrar {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.btn-primary2 {
+    display: block;
+    margin: 0 auto;
+    width: 360px;
+    background-color: #0d6efd;
+    color: white;
+}
+
+.mb-3.form-check {
+    float: right;
+}
+
+.account {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.return {
+    float: right;
+    margin-top: 20px;
+    text-decoration: none;
+    color: black;
+}
+.login{
+    margin-top: 20px;
+    margin-left: 500px;
+    margin-right: 500px;
+    width: 40%;
+
+}
