@@ -7,17 +7,38 @@
 </head>
 <body>
   <?php include("header.php"); ?>
-<div class="login">
-<form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Usuari</label>
-    <input type="text" class="form-control" id="exampleInputEmail1">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Contrasenya</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <button type="submit" class="btn btn-primary">Iniciar sessió</button>
-</form>
+  <div class="shadow-form">
+  <h1 class="account">Crea un compte</h1>
+  <form class="form-registrar">
+    <div class="mb-3">
+      <label for="exampleInputName1" class="form-label">Nom</label>
+      <input type="text" class="form-control" id="input" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputLastName1" class="form-label">Cognom</label>
+      <input type="text" class="form-control" id="input" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email</label>
+      <input type="email" class="form-control" id="input" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Telèfon</label>
+      <input type="tel" class="form-control" id="input">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contrasenya</label>
+      <input type="password" class="form-control" id="input">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Nº de Targeta</label>
+      <input type="text" class="form-control" id="input">
+    </div>
+    <button type="submit" class="btn btn-primary2">Enviar</button>
+    <a href="" class="return">Tornar al menú principal</a>
+  </form>
 </div>
 </body>

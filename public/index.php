@@ -19,5 +19,5 @@ if ($r === "login") {
 } elseif ($r == "register") {
     ctrlRegister($_GET, $session);
 } else {
-    echo "error";
+    ctrlIndex($_GET, $_COOKIE, $session);
 }
