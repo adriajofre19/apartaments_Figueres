@@ -7,18 +7,20 @@
 </head>
 <body>
   <?php include("header.php"); ?>
-<div class="login">
-<form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Usuari</label>
-    <input type="text" class="form-control" id="exampleInputEmail1">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Contrasenya</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <button type="submit" class="btn btn-primary">Iniciar sessió</button>
-</form>
-</div>
+  <div class="shadow-form">
+  <h1 class="account">Inici Sessió</h1>
+  <form class="form-registrar">
+    <div class="mb-3">
+      <label for="exampleInputName1" class="form-label">Nom</label>
+      <input type="text" class="form-control" id="input" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputLastName1" class="form-label">Contrasenya</label>
+      <input type="password" class="form-control" id="input" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text"></div>
+    </div>
+    <button type="submit" class="btn btn-primary2">Enviar</button>
+    <a href="" class="return">Tornar al menú principal</a>
 </body>
 
