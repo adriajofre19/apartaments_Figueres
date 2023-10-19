@@ -14,7 +14,7 @@ $session = new Daw\Session();
 
 if ($r === "login") {
     ctrlLogin($_GET, $session);
-} elseif ($r == "index") {
+} elseif ($r == "") {
     ctrlIndex($_GET, $_COOKIE, $session);
 } elseif ($r == "register") {
     ctrlRegister($_GET, $session);
