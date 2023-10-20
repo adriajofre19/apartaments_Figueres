@@ -22,18 +22,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?r=login">Les meves dades</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php?r=login">Iniciar sessió</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php?r=register">Registrar</a>
-                        </li>
                     </ul>
                 </div>
 
                     </form>
+                    <a href="index.php?r=login">
                     <button type="button" href="index.php?r=login" class="btn btn-primary">Iniciar sessió</button>
+                    </a>
+                    <a href="index.php?r=register">
                     <button type="button" class="btn btn-primary">Registrar-se</button>
+                    </a>
             </div>
         </nav>
 

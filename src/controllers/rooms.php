@@ -1,5 +1,6 @@
 <?php
 
-function ctrlRooms() {
-    include "../src/views/rooms.php";
+function ctrlRooms($request, $response, $container) {
+    $response->setTemplate("rooms.php");
+    return $response;
 }
