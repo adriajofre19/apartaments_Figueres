@@ -1,5 +1,6 @@
 <?php
 
-function ctrlRegister() {
-    include "../src/views/register.php";
+function ctrlRegister($request, $response, $container) {
+    $response->setTemplate("register.php");
+    return $response;
 }
