@@ -94,3 +94,46 @@
     text-decoration: none;
     color: black;
 }
+.body_apartaments {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.room-card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.room-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.Info_habitacions {
+    font-size: 16px;
+    margin-top: 10px;
+}
+.Preu_habitacions {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+strong {
+    color: #007bff;
+}
