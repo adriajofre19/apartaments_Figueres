@@ -17,8 +17,10 @@
 
 .card {
     width: 100%; 
-    margin: 10px; 
+    margin: 10px;
+    text-decoration: none; 
 }
+
 .row{
     width: 1327px; 
     margin: 0 auto; 
@@ -136,4 +138,8 @@ h1 {
 
 strong {
     color: #007bff;
+}
+.card a{
+    text-decoration: none;
+    color: black;
 }

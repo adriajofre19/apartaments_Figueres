@@ -24,6 +24,9 @@ elseif ($r === "index") {
 elseif ($r === "register") {
     $response = ctrlRegister($request, $response, $container);
 }
+elseif ($r === "rooms") {
+    $response = ctrlRooms($request, $response, $container);
+}
 else {
     $response = ctrlIndex($request, $response, $container);
 }
