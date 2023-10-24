@@ -27,18 +27,6 @@
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Telèfon</label>
-      <input type="tel" class="form-control" id="input">
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Contrasenya</label>
-      <input type="password" class="form-control" id="input">
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Nº de Targeta</label>
-      <input type="text" class="form-control" id="input">
-    </div>
-    <button type="submit" class="btn btn-primary2">Enviar</button>
-    <a href="" class="return">Tornar al menú principal</a>
       <input name="telefon" type="tel" class="form-control" id="input">
     </div>
     <div class="mb-3">
@@ -56,7 +44,4 @@
     <button type="submit" class="btn btn-primary2">Enviar</button>
   </form>
 </div>
-<footer>
-<?php include 'footer.php' ?>
-</footer>
 </body>

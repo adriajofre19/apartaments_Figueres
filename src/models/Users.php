@@ -18,7 +18,7 @@ class Users {
     }
 
     public function getAll($userId){
-        $stm = $this->sql->prepare("select id, task from tasks where deleted=0 and user_id = :user_id;");
+        $stm = $this->sql->prepare("select id, nom, cognoms from users where id = :user_id;");
         $stm->execute([':user_id' => $userId]);
         
         $tasks = array();
@@ -40,9 +40,9 @@ class Users {
         }
     }
 
-    public function addUser($nom,$cognoms,$email,$telefon,$targeta_credit,$user,$pass) {
-        $stm = $this->sql->prepare('insert into users (nom, cognoms, email, telefon, targeta_credit, user, pass) values (:nom, :cognoms,:email, :telefon, :targeta_credit, :user, :pass);');
-        $result = $stm->execute([':nom' => $nom, ':cognoms' => $cognoms, ':email' => $email, ':telefon' => $telefon, ':targeta_credit' => $targeta_credit, ':user' => $user, ':pass' => $pass ]);
+    public function addUser($nom,$cognoms,$email,$telefon,$numero_targeta_credit,$user,$pass) {
+        $stm = $this->sql->prepare('insert into users (nom, cognoms, email, telefon, numero_targeta_credit, user, pass) values (:nom, :cognoms,:email, :telefon, :numero_targeta_credit, :user, :pass);');
+        $result = $stm->execute([':nom' => $nom, ':cognoms' => $cognoms, ':email' => $email, ':telefon' => $telefon, ':numero_targeta_credit' => $numero_targeta_credit, ':user' => $user, ':pass' => $pass ]);
     }
 
 

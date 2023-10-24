@@ -5,29 +5,17 @@
  *
  * @author: Dani Prados dprados@cendrassos.net
  *
-<<<<<<< HEAD
- * Objecte que encapsula la response.
-=======
  * Objecte que encapsula la resposta.
->>>>>>> d9a2fd5 (segon commit)
  **/
 
 namespace Emeset;
 
 /**
-<<<<<<< HEAD
- * Response: Objecte que encapsula la response.
- *
- * @author: Dani Prados dprados@cendrassos.net
- *
- * Per guarda tota la informació de la response.
-=======
  * Response: Objecte que encapsula la resposta.
  *
  * @author: Dani Prados dprados@cendrassos.net
  *
  * Per guarda tota la informació de la resposta.
->>>>>>> d9a2fd5 (segon commit)
  **/
 class Response
 {
