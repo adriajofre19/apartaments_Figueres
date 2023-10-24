@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<<<<<<< HEAD
   <?php include("header.php"); ?>
   <div class="shadow-form">
   <h1 class="account">Inici Sessió</h1>
@@ -14,32 +13,22 @@
     <div class="mb-3">
       <label for="exampleInputName1" class="form-label">Nom</label>
       <input type="text" class="form-control" id="input" aria-describedby="emailHelp">
-=======
-  
-  <div class="shadow-form">
-  <h1 class="account">Inici Sessió</h1>
-  <form class="form-registrar" action="index.php" method="post">
-    <input type="hidden" name="r" value="dologin">
-    <div class="mb-3">
-      <label for="exampleInputName1" class="form-label">Nom</label>
-      <input name="user" type="text" class="form-control" id="input" aria-describedby="emailHelp">
->>>>>>> d9a2fd5 (segon commit)
       <div id="emailHelp" class="form-text"></div>
     </div>
     <div class="mb-3">
       <label for="exampleInputLastName1" class="form-label">Contrasenya</label>
-<<<<<<< HEAD
       <input type="password" class="form-control" id="input" aria-describedby="emailHelp">
       <div id="emailHelp" class="form-text"></div>
     </div>
     <button type="submit" class="btn btn-primary2">Enviar</button>
-    <a href="" class="return">Tornar al menú principal</a>
-=======
       <input name="pass" type="password" class="form-control" id="input" aria-describedby="emailHelp">
       <div id="emailHelp" class="form-text"></div>
     </div>
     <button type="submit" class="btn btn-primary2">Enviar</button>
     <a href="index.php?r=register" class="return">No tens usuari, regista't aqui</a>
->>>>>>> d9a2fd5 (segon commit)
+    </form>
+<footer>
+<?php include 'footer.php' ?>
+</footer>
 </body>
 

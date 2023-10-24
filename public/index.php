@@ -8,6 +8,10 @@ include "../src/controllers/login.php";
 include "../src/controllers/register.php";
 include "../src/controllers/doLogin.php";
 include "../src/controllers/doRegister.php";
+include "../src/controllers/rooms.php";
+include "../src/controllers/dades.php";
+include "../src/controllers/do_reserve.php";
+include "../src/controllers/Check_reserve.php";
 
 
 include "../src/middleware/isLogged.php";
@@ -35,8 +39,20 @@ if($r == "") {
   $response = ctrlRegister($request, $response, $container);
 } elseif($r == "doregister") {
   $response = ctrlDoRegister($request, $response, $container);
-} else {
-     $response = ctrlLogin($request, $response, $container);
- }
-
-  $response->response();
+} 
+elseif ($r === "rooms") {
+    $response = ctrlRooms($request, $response, $container);
+}
+elseif ($r === "data") {
+    $response = ctrlData($request, $response, $container);
+}
+elseif ($r === "do_reserve") {
+    $response = ctrlDo_reserve($request, $response, $container);
+}
+elseif ($r === "check_reserve") {
+    $response = ctrlCheck_reserve($request, $response, $container);
+}
+else {
+  $response = ctrlLogin($request, $response, $container);
+}
+$response->response();

@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<<<<<<< HEAD
   <?php include("header.php"); ?>
   <div class="shadow-form">
   <h1 class="account">Crea un compte</h1>
@@ -19,29 +18,11 @@
     <div class="mb-3">
       <label for="exampleInputLastName1" class="form-label">Cognom</label>
       <input type="text" class="form-control" id="input" aria-describedby="emailHelp">
-=======
-  <div class="shadow-form">
-  <h1 class="account">Crea un compte</h1>
-  <form class="form-registrar" action="index.php" method="post">
-    <input type="hidden" name="r" value="doregister">
-    <div class="mb-3">
-      <label for="exampleInputName1" class="form-label">Nom</label>
-      <input name="nom" type="text" class="form-control" id="input" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text"></div>
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputLastName1" class="form-label">Cognoms</label>
-      <input name="cognoms" type="text" class="form-control" id="input" aria-describedby="emailHelp">
->>>>>>> d9a2fd5 (segon commit)
       <div id="emailHelp" class="form-text"></div>
     </div>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email</label>
-<<<<<<< HEAD
-      <input type="email" class="form-control" id="input" aria-describedby="emailHelp">
-=======
       <input name="email" type="email" class="form-control" id="input" aria-describedby="emailHelp">
->>>>>>> d9a2fd5 (segon commit)
       <div id="emailHelp" class="form-text"></div>
     </div>
     <div class="mb-3">
@@ -59,7 +40,6 @@
     </div>
     <button type="submit" class="btn btn-primary2">Enviar</button>
     <a href="" class="return">Tornar al menú principal</a>
-=======
       <input name="telefon" type="tel" class="form-control" id="input">
     </div>
     <div class="mb-3">
@@ -75,7 +55,9 @@
       <input name="pass" type="text" class="form-control" id="input">
     </div>
     <button type="submit" class="btn btn-primary2">Enviar</button>
->>>>>>> d9a2fd5 (segon commit)
   </form>
 </div>
+<footer>
+<?php include 'footer.php' ?>
+</footer>
 </body>

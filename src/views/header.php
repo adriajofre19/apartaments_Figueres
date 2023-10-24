@@ -14,13 +14,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Fer una reserva</a>
+                            <a class="nav-link" href="index.php?r=do_reserve">Fer una reserva</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Consultar reserves</a>
+                            <a class="nav-link" href="index.php?r=check_reserve">Consultar reserves</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?r=login">Les meves dades</a>
+                            <a class="nav-link" href="index.php?r=data">Les meves dades</a>
                         </li>
                     </ul>
                 </div>
