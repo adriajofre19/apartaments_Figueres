@@ -42,6 +42,7 @@
       <input name="pass" type="text" class="form-control" id="input">
     </div>
     <button type="submit" class="btn btn-primary2">Enviar</button>
+<a href="index.php?r=login" class="return">Ja tens usuari, inicia sessió aqui</a>
   </form>
 </div>
 </body>
