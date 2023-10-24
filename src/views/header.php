@@ -26,12 +26,16 @@
                 </div>
 
                     </form>
+<<<<<<< HEAD
                     <a href="index.php?r=login">
                     <button type="button" href="index.php?r=login" class="btn btn-primary">Iniciar sessió</button>
                     </a>
                     <a href="index.php?r=register">
                     <button type="button" class="btn btn-primary">Registrar-se</button>
                     </a>
+=======
+                    <a type="button" href="index.php?r=dologout" class="btn btn-primary">Tancar sessió (<?=$user["user"];?>)</a>
+>>>>>>> d9a2fd5 (segon commit)
             </div>
         </nav>
 

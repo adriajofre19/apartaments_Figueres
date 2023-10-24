@@ -1,35 +1,36 @@
-
-#carouselExample{
+#carouselExample {
     height: 30%;
-    width: 1300px; 
-    margin: 0 auto; 
+    width: 1300px;
+    margin: 0 auto;
     margin-top: 20px;
-   
+
 }
 
 .hotels {
     display: flex;
-    justify-content: center; 
-    flex-wrap: wrap; 
-    max-width: 1400px; 
-    margin: 0 auto; 
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .card {
-    width: 100%; 
+    width: 100%;
     margin: 10px;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
-.row{
-    width: 1327px; 
-    margin: 0 auto; 
+.row {
+    width: 1327px;
+    margin: 0 auto;
     margin-top: 20px;
     margin-left: 10px;
 }
-.form-inici-sessio{
+
+.form-inici-sessio {
     text-align: center;
 }
+
 .form-registrar {
     max-width: 400px;
     margin: 0 auto;
@@ -41,7 +42,7 @@
     margin: 0 auto;
     background-color: #0d6efd;
     color: white;
-    margin-right:10px ;
+    margin-right: 10px;
 }
 
 .mb-3.form-check {
@@ -59,14 +60,17 @@
     text-decoration: none;
     color: black;
 }
-.hotels{
+
+.hotels {
     display: inline-block;
     margin-left: 75px;
     width: 40%;
 }
-.form-inici-sessio{
+
+.form-inici-sessio {
     text-align: center;
 }
+
 .form-registrar {
     max-width: 400px;
     margin: 0 auto;
@@ -139,7 +143,8 @@ h1 {
 strong {
     color: #007bff;
 }
-.card a{
+
+.card a {
     text-decoration: none;
     color: black;
 }
