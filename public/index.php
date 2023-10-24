@@ -7,6 +7,9 @@ include "../src/controllers/login.php";
 include "../src/controllers/index.php";
 include "../src/controllers/register.php";
 include "../src/controllers/rooms.php";
+include "../src/controllers/dades.php";
+include "../src/controllers/do_reserve.php";
+include "../src/controllers/Check_reserve.php";
 
 $r = $_REQUEST["r"] ?? "";
 
@@ -26,6 +29,15 @@ elseif ($r === "register") {
 }
 elseif ($r === "rooms") {
     $response = ctrlRooms($request, $response, $container);
+}
+elseif ($r === "data") {
+    $response = ctrlData($request, $response, $container);
+}
+elseif ($r === "do_reserve") {
+    $response = ctrlDo_reserve($request, $response, $container);
+}
+elseif ($r === "check_reserve") {
+    $response = ctrlCheck_reserve($request, $response, $container);
 }
 else {
     $response = ctrlIndex($request, $response, $container);

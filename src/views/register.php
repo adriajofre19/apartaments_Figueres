@@ -38,7 +38,9 @@
       <input type="text" class="form-control" id="input">
     </div>
     <button type="submit" class="btn btn-primary2">Enviar</button>
-    <a href="" class="return">Tornar al menú principal</a>
   </form>
 </div>
+<footer>
+<?php include 'footer.php' ?>
+</footer>
 </body>

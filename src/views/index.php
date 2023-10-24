@@ -77,7 +77,7 @@
 <div class="row row-cols-1 row-cols-md-4 g-4">
  <div class="col">
    <a href="index.php?r=rooms"><div class="card">
-     <img src="images/habitacio4.jpg" class="card-img-top" alt="...">
+     <img src="images/habitacio5.jpg" class="card-img-top" alt="...">
      <div class="card-body">
        <h5 class="card-title">Card title</h5>
        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -86,7 +86,7 @@
  </div>
  <div class="col">
    <a href="index.php?r=rooms"><div class="card">
-     <img src="images/habitacio4.jpg" class="card-img-top" alt="...">
+     <img src="images/habitacio6.jpg" class="card-img-top" alt="...">
      <div class="card-body">
        <h5 class="card-title">Card title</h5>
        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -95,7 +95,7 @@
  </div>
  <div class="col">
    <a href="index.php?r=rooms"><div class="card">
-     <img src="images/habitacio4.jpg" class="card-img-top" alt="...">
+     <img src="images/habitacio7.jpg" class="card-img-top" alt="...">
      <div class="card-body">
        <h5 class="card-title">Card title</h5>
        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
@@ -104,7 +104,7 @@
  </div>
  <div class="col">
    <a href="index.php?r=rooms"><div class="card">
-     <img src="images/habitacio4.jpg" class="card-img-top" alt="...">
+     <img src="images/habitacio8.jpg" class="card-img-top" alt="...">
      <div class="card-body">
        <h5 class="card-title">Card title</h5>
        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -114,7 +114,9 @@
 </div>
 
        </div>    
-
+<footer>
+<?php include 'footer.php' ?>
+</footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
