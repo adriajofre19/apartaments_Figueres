@@ -39,20 +39,8 @@ if($r == "") {
   $response = ctrlRegister($request, $response, $container);
 } elseif($r == "doregister") {
   $response = ctrlDoRegister($request, $response, $container);
-} 
-elseif ($r === "rooms") {
-    $response = ctrlRooms($request, $response, $container);
-}
-elseif ($r === "data") {
-    $response = ctrlData($request, $response, $container);
-}
-elseif ($r === "do_reserve") {
-    $response = ctrlDo_reserve($request, $response, $container);
-}
-elseif ($r === "check_reserve") {
-    $response = ctrlCheck_reserve($request, $response, $container);
-}
-else {
-  $response = ctrlLogin($request, $response, $container);
-}
-$response->response();
+} else {
+     $response = ctrlLogin($request, $response, $container);
+ }
+
+  $response->response();

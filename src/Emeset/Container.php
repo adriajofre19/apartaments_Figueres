@@ -42,12 +42,6 @@ class Container
         return new \Emeset\Request();
     }
 
-<<<<<<< HEAD
-    public function images()
-    {
-        $conn = new \Daw\Connection($this->config["sqlite"]);
-        return new \Daw\ImagesSQLite($conn);
-=======
     public function users()
     {
         return new \Daw\Users(
@@ -61,7 +55,6 @@ class Container
     public function tasks()
     {
         return new \Daw\Tasks($this->sql);
->>>>>>> d9a2fd5 (segon commit)
     }
 
 }

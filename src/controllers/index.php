@@ -1,9 +1,6 @@
 <?php
 
 function ctrlIndex($request, $response, $container) {
-<<<<<<< HEAD
-    $response->setTemplate("index.php");
-=======
     $taskModel = $container->users();
     $user = $request->get("SESSION", "user");
     $tasks = [];
@@ -20,6 +17,5 @@ function ctrlIndex($request, $response, $container) {
     $response->set("tasks", $tasks);
     $response->setTemplate("index.php");
 
->>>>>>> d9a2fd5 (segon commit)
     return $response;
 }

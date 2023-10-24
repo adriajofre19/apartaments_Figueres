@@ -77,8 +77,4 @@ class Request
     {
         return $this->get($input, $id, FILTER_DEFAULT, $options);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d9a2fd5 (segon commit)

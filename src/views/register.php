@@ -6,18 +6,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <?php include("header.php"); ?>
   <div class="shadow-form">
   <h1 class="account">Crea un compte</h1>
-  <form class="form-registrar">
+  <form class="form-registrar" action="index.php" method="post">
+    <input type="hidden" name="r" value="doregister">
     <div class="mb-3">
       <label for="exampleInputName1" class="form-label">Nom</label>
-      <input type="text" class="form-control" id="input" aria-describedby="emailHelp">
+      <input name="nom" type="text" class="form-control" id="input" aria-describedby="emailHelp">
       <div id="emailHelp" class="form-text"></div>
     </div>
     <div class="mb-3">
-      <label for="exampleInputLastName1" class="form-label">Cognom</label>
-      <input type="text" class="form-control" id="input" aria-describedby="emailHelp">
+      <label for="exampleInputLastName1" class="form-label">Cognoms</label>
+      <input name="cognoms" type="text" class="form-control" id="input" aria-describedby="emailHelp">
       <div id="emailHelp" class="form-text"></div>
     </div>
     <div class="mb-3">
@@ -27,7 +27,6 @@
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Telèfon</label>
-<<<<<<< HEAD
       <input type="tel" class="form-control" id="input">
     </div>
     <div class="mb-3">
