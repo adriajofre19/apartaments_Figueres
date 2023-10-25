@@ -16,6 +16,7 @@ include "../src/Emeset/Request.php";
 include "../src/Emeset/Response.php";
 include "../src/controllers/do_reserve.php";
 include "../src/controllers/check_reserve.php";
+include "../src/controllers/rooms.php";
 
  $request = new \Emeset\Request();
  $response = new \Emeset\Response();
@@ -48,6 +49,9 @@ elseif($r == "do_reserve") {
 }
 elseif($r == "check_reserve") {
   $response = isLogged($request, $response, $container,"CtrlCheck_reserve");
+}
+elseif($r == "rooms") {
+  $response = isLogged($request, $response, $container,"CtrlRooms");
 } else {
      $response = ctrlLogin($request, $response, $container);
  }
