@@ -10,13 +10,12 @@ include "../src/controllers/doLogin.php";
 include "../src/controllers/doRegister.php";
 include "../src/controllers/dades.php";
 include "../src/controllers/doUpdate.php";
-
-
 include "../src/middleware/isLogged.php";
-
 include "../src/Emeset/Container.php";
- include "../src/Emeset/Request.php";
- include "../src/Emeset/Response.php";
+include "../src/Emeset/Request.php";
+include "../src/Emeset/Response.php";
+include "../src/controllers/do_reserve.php";
+include "../src/controllers/check_reserve.php";
 
  $request = new \Emeset\Request();
  $response = new \Emeset\Response();
@@ -43,6 +42,12 @@ if($r == "") {
   $response = isLogged($request, $response, $container, "CtrlDades");
 } elseif($r == "doupdate") {
   $response = ctrlDoUpdate($request, $response, $container);
+}
+elseif($r == "do_reserve") {
+  $response = isLogged($request, $response, $container,"CtrlDo_reserve");
+}
+elseif($r == "check_reserve") {
+  $response = isLogged($request, $response, $container,"CtrlCheck_reserve");
 } else {
      $response = ctrlLogin($request, $response, $container);
  }
