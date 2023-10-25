@@ -6,18 +6,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <?php include("header.php"); ?>
   <div class="shadow-form">
   <h1 class="account">Crea un compte</h1>
-  <form class="form-registrar">
+  <form class="form-registrar" action="index.php" method="post">
+    <input type="hidden" name="r" value="doregister">
     <div class="mb-3">
       <label for="exampleInputName1" class="form-label">Nom</label>
-      <input type="text" class="form-control" id="input" aria-describedby="emailHelp">
+      <input name="nom" type="text" class="form-control" id="input" aria-describedby="emailHelp">
       <div id="emailHelp" class="form-text"></div>
     </div>
     <div class="mb-3">
-      <label for="exampleInputLastName1" class="form-label">Cognom</label>
-      <input type="text" class="form-control" id="input" aria-describedby="emailHelp">
+      <label for="exampleInputLastName1" class="form-label">Cognoms</label>
+      <input name="cognoms" type="text" class="form-control" id="input" aria-describedby="emailHelp">
       <div id="emailHelp" class="form-text"></div>
     </div>
     <div class="mb-3">
@@ -27,24 +27,11 @@
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Telèfon</label>
-<<<<<<< HEAD
-      <input type="tel" class="form-control" id="input">
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Contrasenya</label>
-      <input type="password" class="form-control" id="input">
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Nº de Targeta</label>
-      <input type="text" class="form-control" id="input">
-    </div>
-    <button type="submit" class="btn btn-primary2">Enviar</button>
-    <a href="" class="return">Tornar al menú principal</a>
       <input name="telefon" type="tel" class="form-control" id="input">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Nº de Targeta</label>
-      <input name="targeta_credit" type="text" class="form-control" id="input">
+      <input name="card" type="text" class="form-control" id="input">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Usuari</label>
@@ -57,7 +44,4 @@
     <button type="submit" class="btn btn-primary2">Enviar</button>
   </form>
 </div>
-<footer>
-<?php include 'footer.php' ?>
-</footer>
 </body>

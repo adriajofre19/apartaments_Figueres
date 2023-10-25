@@ -5,29 +5,17 @@
  *
  * @author: Dani Prados dprados@cendrassos.net
  *
-<<<<<<< HEAD
- * Objecte que encapsula la response.
-=======
  * Objecte que encapsula la resposta.
->>>>>>> d9a2fd5 (segon commit)
  **/
 
 namespace Emeset;
 
 /**
-<<<<<<< HEAD
- * Response: Objecte que encapsula la response.
- *
- * @author: Dani Prados dprados@cendrassos.net
- *
- * Per guarda tota la informació de la response.
-=======
  * Response: Objecte que encapsula la resposta.
  *
  * @author: Dani Prados dprados@cendrassos.net
  *
  * Per guarda tota la informació de la resposta.
->>>>>>> d9a2fd5 (segon commit)
  **/
 class Response
 {
@@ -40,11 +28,7 @@ class Response
     public $json = false;
 
     /**
-<<<<<<< HEAD
-     * __construct:  Té tota la informació per crear la response
-=======
      * __construct:  Té tota la informació per crear la resposta
->>>>>>> d9a2fd5 (segon commit)
      *
      * @param $path string path fins a la carpeta de plantilles.
      **/
@@ -96,11 +80,7 @@ class Response
     }
 
     /**
-<<<<<<< HEAD
-     * setHeader Afegeix una capçalera http a la response
-=======
      * setHeader Afegeix una capçalera http a la resposta
->>>>>>> d9a2fd5 (segon commit)
      *
      * @param  string $header capçalera http
      * @return void
@@ -111,11 +91,7 @@ class Response
     }
 
     /**
-<<<<<<< HEAD
-     * redirect.  Defineix la response com una redirecció. (accepta els mateixos paràmetres que header)
-=======
      * redirect.  Defineix la resposta com una redirecció. (accepta els mateixos paràmetres que header)
->>>>>>> d9a2fd5 (segon commit)
      *
      * @param  string $header capçalera http amb la
      *                        redirecció
@@ -128,11 +104,7 @@ class Response
     }
 
     /**
-<<<<<<< HEAD
-     * setTemplate defineix quina plantilla utilitzarem per la response.
-=======
      * setTemplate defineix quina plantilla utilitzarem per la resposta.
->>>>>>> d9a2fd5 (segon commit)
      *
      * @param  string $p nom de la plantilla
      * @return void
@@ -143,11 +115,7 @@ class Response
     }
 
     /**
-<<<<<<< HEAD
-     * setJson força que la response sigui en format json.
-=======
      * setJson força que la resposta sigui en format json.
->>>>>>> d9a2fd5 (segon commit)
      *
      * @return void
      */
@@ -157,11 +125,7 @@ class Response
     }
 
     /**
-<<<<<<< HEAD
-     * Genera la response HTTP
-=======
      * Genera la resposta HTTP
->>>>>>> d9a2fd5 (segon commit)
      *
      * @return void
      */
@@ -179,8 +143,4 @@ class Response
             include $this->path . $this->template;
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d9a2fd5 (segon commit)

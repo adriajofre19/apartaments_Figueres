@@ -14,7 +14,6 @@ function isLogged($request, $response, $container, $next){
 
     $response = $next($request, $response, $container);
 
-
     return $response;
     
 }

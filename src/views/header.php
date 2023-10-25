@@ -20,22 +20,13 @@
                             <a class="nav-link" href="index.php?r=check_reserve">Consultar reserves</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?r=data">Les meves dades</a>
+                            <a class="nav-link" href="index.php?r=dades">Les meves dades</a>
                         </li>
                     </ul>
                 </div>
 
                     </form>
-<<<<<<< HEAD
-                    <a href="index.php?r=login">
-                    <button type="button" href="index.php?r=login" class="btn btn-primary">Iniciar sessió</button>
-                    </a>
-                    <a href="index.php?r=register">
-                    <button type="button" class="btn btn-primary">Registrar-se</button>
-                    </a>
-=======
-                    <a type="button" href="index.php?r=dologout" class="btn btn-primary">Tancar sessió (<?=$user["user"];?>)</a>
->>>>>>> d9a2fd5 (segon commit)
+                    <a type="button" href="index.php?r=dologout" class="btn btn-primary">Tancar sessió (<?=$user['user'];?>)</a>
             </div>
         </nav>
 
