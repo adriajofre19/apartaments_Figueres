@@ -20,13 +20,13 @@
                             <a class="nav-link" href="#">Consultar reserves</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?r=login">Les meves dades</a>
+                            <a class="nav-link" href="index.php?r=dades">Les meves dades</a>
                         </li>
                     </ul>
                 </div>
 
                     </form>
-                    <a type="button" href="index.php?r=dologout" class="btn btn-primary">Tancar sessió (<?=$user["user"];?>)</a>
+                    <a type="button" href="index.php?r=dologout" class="btn btn-primary">Tancar sessió (<?=$user['user'];?>)</a>
             </div>
         </nav>
 

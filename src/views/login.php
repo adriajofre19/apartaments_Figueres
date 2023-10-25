@@ -1,3 +1,6 @@
+
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -6,7 +9,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
   <div class="shadow-form">
   <h1 class="account">Inici Sessió</h1>
   <form class="form-registrar" action="index.php" method="post">
@@ -23,5 +25,8 @@
     </div>
     <button type="submit" class="btn btn-primary2">Enviar</button>
     <a href="index.php?r=register" class="return">No tens usuari, regista't aqui</a>
+  </form>
+</div>
 </body>
+</html>
 

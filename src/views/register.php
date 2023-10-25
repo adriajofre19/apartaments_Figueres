@@ -31,7 +31,7 @@
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Nº de Targeta</label>
-      <input name="targeta_credit" type="text" class="form-control" id="input">
+      <input name="card" type="text" class="form-control" id="input">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Usuari</label>

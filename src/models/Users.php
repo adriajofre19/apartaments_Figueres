@@ -40,9 +40,36 @@ class Users {
         }
     }
 
-    public function addUser($nom,$cognoms,$email,$telefon,$numero_targeta_credit,$user,$pass) {
-        $stm = $this->sql->prepare('insert into users (nom, cognoms, email, telefon, numero_targeta_credit, user, pass) values (:nom, :cognoms,:email, :telefon, :numero_targeta_credit, :user, :pass);');
-        $result = $stm->execute([':nom' => $nom, ':cognoms' => $cognoms, ':email' => $email, ':telefon' => $telefon, ':numero_targeta_credit' => $numero_targeta_credit, ':user' => $user, ':pass' => $pass ]);
+    public function addUser($nom,$cognoms,$email,$telefon,$card,$user,$pass) {
+        $stm = $this->sql->prepare('insert into users (nom, cognoms, email, telefon, card, user, pass) values (:nom, :cognoms,:email, :telefon, :card, :user, :pass);');
+        $result = $stm->execute([':nom' => $nom, ':cognoms' => $cognoms, ':email' => $email, ':telefon' => $telefon, ':card' => $card, ':user' => $user, ':pass' => $pass ]);
+    }
+
+    public function editUser($nom, $cognoms, $telefon, $email, $card, $user, $pass) {
+    $stm = $this->sql->prepare("UPDATE users SET nom = :nom, cognoms = :cognoms, telefon = :telefon, email = :email, card = :card, user = :user, pass = :pass WHERE user = :user");
+    
+    $stm->execute([
+        ':nom' => $nom,
+        ':cognoms' => $cognoms,
+        ':telefon' => $telefon,
+        ':email' => $email,
+        ':card' => $card,
+        ':user' => $user,
+        ':pass' => $pass
+    ]);
+}
+
+
+
+     public function getUserData($userId) {
+        $stm = $this->sql->prepare("select id, nom, cognoms, telefon, email, card, user, pass from users where id = :user_id;");
+        $stm->execute([':user_id' => $userId]);
+        
+        $tasks = array();
+        while ($task = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $tasks[] = $task;
+        }
+        return $tasks;
     }
 
 

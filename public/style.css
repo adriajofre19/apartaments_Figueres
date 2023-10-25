@@ -1,3 +1,4 @@
+/*
 #carouselExample {
     height: 30%;
     width: 1300px;
@@ -149,9 +150,9 @@ strong {
     color: black;
 }
 footer {
-    background-color: #333; /* Color de fondo del footer */
-    color: #fff; /* Color de texto del footer */
-    padding: 20px 0; /* Espaciado interior del footer */
+    background-color: #333; 
+    color: #fff; 
+    padding: 20px 0; 
 }
 
 .footer-container {
@@ -163,7 +164,7 @@ footer {
 }
 
 .footer-logo img {
-    max-width: 150px; /* Tamaño máximo del logo */
+    max-width: 150px; /* Tamaño máximo del logo 
 }
 
 .footer-links ul {
@@ -182,7 +183,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: #00c4a5; /* Cambiar color al pasar el ratón */
+    color: #00c4a5; /* Cambiar color al pasar el ratón 
 }
 
 .footer-contact p {
@@ -191,4 +192,17 @@ footer {
 }
 .map{
     margin-bottom: 20px;
+}
+.card {
+    width: 30%;
+    /* margin: 10px; 
+    text-decoration: none;
+}*/
+
+.apartaments{
+    padding-top: 100px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1800px;
+    margin: 0 auto;
 }
