@@ -14,7 +14,6 @@ include "../src/middleware/isLogged.php";
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
 include "../src/Emeset/Response.php";
-include "../src/controllers/do_reserve.php";
 include "../src/controllers/check_reserve.php";
 include "../src/controllers/rooms.php";
 
@@ -43,9 +42,6 @@ if($r == "") {
   $response = isLogged($request, $response, $container, "CtrlDades");
 } elseif($r == "doupdate") {
   $response = ctrlDoUpdate($request, $response, $container);
-}
-elseif($r == "do_reserve") {
-  $response = isLogged($request, $response, $container,"CtrlDo_reserve");
 }
 elseif($r == "check_reserve") {
   $response = isLogged($request, $response, $container,"CtrlCheck_reserve");
