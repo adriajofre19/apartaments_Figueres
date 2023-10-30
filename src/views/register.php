@@ -31,7 +31,7 @@
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Nº de Targeta</label>
-      <input name="targeta_credit" type="text" class="form-control" id="input">
+      <input name="card" type="text" class="form-control" id="input">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Usuari</label>
@@ -42,7 +42,6 @@
       <input name="pass" type="text" class="form-control" id="input">
     </div>
     <button type="submit" class="btn btn-primary2">Enviar</button>
-<a href="index.php?r=login" class="return">Ja tens usuari, inicia sessió aqui</a>
   </form>
 </div>
 </body>

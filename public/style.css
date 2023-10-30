@@ -1,152 +1,53 @@
-#carouselExample {
-    height: 30%;
-    width: 1300px;
-    margin: 0 auto;
-    margin-top: 20px;
-
+.col a {
+    text-decoration: none;
+  }
+footer {
+    background-color: #333; 
+    color: #fff; 
+    padding: 20px 0; 
 }
 
-.hotels {
+.footer-container {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.card {
-    width: 100%;
-    margin: 10px;
-    text-decoration: none;
-}
-
-.row {
-    width: 1327px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
     margin: 0 auto;
     margin-top: 20px;
-    margin-left: 10px;
 }
 
-.form-inici-sessio {
-    text-align: center;
+.footer-logo img {
+    max-width: 150px; 
 }
 
-.form-registrar {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.btn-primary {
-    display: block;
-    margin: 0 auto;
-    background-color: #0d6efd;
-    color: white;
-    margin-right: 10px;
-}
-
-.mb-3.form-check {
-    float: right;
-}
-
-.account {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.return {
-    float: right;
-    margin-top: 20px;
-    text-decoration: none;
-    color: black;
-}
-
-.hotels {
-    display: inline-block;
-    margin-left: 75px;
-    width: 40%;
-}
-
-.form-inici-sessio {
-    text-align: center;
-}
-
-.form-registrar {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.btn-primary2 {
-    display: block;
-    margin: 0 auto;
-    width: 360px;
-    background-color: #0d6efd;
-    color: white;
-}
-
-.mb-3.form-check {
-    float: right;
-}
-
-.account {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.return {
-    float: right;
-    margin-top: 20px;
-    text-decoration: none;
-    color: black;
-}
-
-.body_apartaments {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
+.footer-links ul {
+    list-style: none;
     padding: 0;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+.footer-links li {
+    margin-bottom: 10px;
 }
 
-.room-card {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-}
-
-.room-card img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-h1 {
-    font-size: 24px;
-    margin-top: 20px;
-}
-
-.Info_habitacions {
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-.Preu_habitacions {
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-strong {
-    color: #007bff;
-}
-
-.card a {
+.footer-links a {
     text-decoration: none;
-    color: black;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #00c4a5; 
+}
+
+.footer-contact p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.apartaments{
+    padding-top: 100px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1800px;
+    margin: 0 auto;
 }

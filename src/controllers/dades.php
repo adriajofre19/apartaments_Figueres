@@ -1,17 +1,19 @@
 <?php
 
 session_start();
-function ctrlIndex($request, $response, $container) {
+
+function ctrlDades($request, $response, $container) {
 
     $taskModel = $container->users();
     
     $user = $request->get("SESSION", "user");
     
-    $tasks = $taskModel->getAll($user["id"]);
+    $tasks = $taskModel->getUserData($user["id"]);
     $response->set("tasks", $tasks);
-    $response->setTemplate("index.php");
+    $response->setTemplate("dades.php");
     
 
     return $response;
-    
-}   
+}
+?>
+
