@@ -14,20 +14,22 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?r=do_reserve">Fer una reserva</a>
+                            <a class="nav-link" href="index.php?r=rooms">Fer una reserva</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?r=check_reserve">Consultar reserves</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php?r=dades">Les meves dades</a>
                         </li>
                     </ul>
                 </div>
 
                     </form>
-                    <a type="button" href="index.php?r=dologout" class="btn btn-primary">Tancar sessió (<?=$user['user'];?>)</a>
-            </div>
-        </nav>
-
+                    <div class="dropdown dropstart">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <?=$user['user'];?>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="index.php?r=dades">Les meves Dades</a></li>
+    <li><a class="dropdown-item" href="index.php?r=doLogout">Tancar Sessió(<?=$user['user'];?>)</a></li>
+  </ul>
+</div>
 
