@@ -19,6 +19,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?r=check_reserve">Consultar reserves</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?r=add_apps">Afegir apartaments</a>
+                        </li>
                     </ul>
                 </div>
 

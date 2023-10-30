@@ -82,6 +82,10 @@ class Users {
         
         return $tasks; 
     }
+    public function AddApps($titol,$preu_alta,$preu_baixa,$temorades,$longitud,$latitud,$n_habitacions,$metres_quadrats,$descripcio,$adreca_postal){
+        $stm = $this->sql->prepare('insert into apartamentos (titol, preu_alta, preu_baixa, temporades, longitud, latitud, n_habitacions, metres_quadrats, descripcio, adreca_postal) values (:titol, :preu_alta, :preu_baixa, :temporades, :longitud, :latitud, :n_habitacions, :metres_quadrats, :descripcio, :adreca_postal);');
+        $result = $stm->execute([':titol'=>$titol, ':preu_alta'=>$preu_alta, ':preu_baixa'=>$preu_baixa, ':temporades'=>$temporades, ':longitud'=>$longitud, ':latitud'=>$latitud, ':n_habitacions'=>$n_habitacions, ':metres_quadrats'=>$metres_quadrats, ':descripcio'=>$descripcio, ':adreca_postal'=>$adreca_postal ]);
+    }
 
 
 
