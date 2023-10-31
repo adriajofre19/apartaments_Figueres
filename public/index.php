@@ -10,6 +10,9 @@ include "../src/controllers/doLogin.php";
 include "../src/controllers/doRegister.php";
 include "../src/controllers/dades.php";
 include "../src/controllers/doUpdate.php";
+include "../src/controllers/apartaments.php";
+
+
 include "../src/middleware/isLogged.php";
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
