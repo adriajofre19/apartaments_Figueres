@@ -38,8 +38,10 @@
     <div class="card h-100">
       <img src="images/habitacio1.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <h5 class="card-title"><?= $apps[0]['Titol']; ?></h5>
+                            <p class="card-text">Preu: <?= $apps[0]['Preu_Alta']; ?></p>
+                            <p class="card-text">Habitacions: <?= $apps[0]['N_Habitacions']; ?></p>
+                            <p class="card-text">Adreça: <?= $apps[0]['Adreca_Postal']; ?></p>
       </div>
     </div>
   </div></a>
@@ -47,8 +49,10 @@
     <div class="card h-100">
       <img src="images/habitacio2.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a short card.</p>
+      <h5 class="card-title"><?= $apps[1]['Titol']; ?></h5>
+                            <p class="card-text">Preu: <?= $apps[1]['Preu_Alta']; ?></p>
+                            <p class="card-text">Habitacions: <?= $apps[1]['N_Habitacions']; ?></p>
+                            <p class="card-text">Adreça: <?= $apps[1]['Adreca_Postal']; ?></p>
       </div>
     </div>
   </div></a>
@@ -56,8 +60,10 @@
     <div class="card h-100">
       <img src="images/habitacio3.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+      <h5 class="card-title"><?= $apps[2]['Titol']; ?></h5>
+                            <p class="card-text">Preu: <?= $apps[2]['Preu_Alta']; ?></p>
+                            <p class="card-text">Habitacions: <?= $apps[2]['N_Habitacions']; ?></p>
+                            <p class="card-text">Adreça: <?= $apps[2]['Adreca_Postal']; ?></p>
       </div>
     </div>
   </div></a>
@@ -65,8 +71,10 @@
     <div class="card h-100">
       <img src="images/habitacio4.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <h5 class="card-title"><?= $apps[3]['Titol']; ?></h5>
+                            <p class="card-text">Preu: <?= $apps[3]['Preu_Alta']; ?></p>
+                            <p class="card-text">Habitacions: <?= $apps[3]['N_Habitacions']; ?></p>
+                            <p class="card-text">Adreça: <?= $apps[3]['Adreca_Postal']; ?></p>
       </div>
     </div>
   </div></a>
@@ -74,17 +82,20 @@
     <div class="card h-100">
       <img src="images/habitacio5.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
+      <h5 class="card-title"><?= $apps[4]['Titol']; ?></h5>
+                            <p class="card-text">Preu: <?= $apps[4]['Preu_Alta']; ?></p>
+                            <p class="card-text">Habitacions: <?= $apps[4]['N_Habitacions']; ?></p>
+                            <p class="card-text">Adreça: <?= $apps[4]['Adreca_Postal']; ?></p>
     </div>
   </div></a>
   <div class="col"><a href="index.php?r=rooms">
     <div class="card h-100">
       <img src="images/habitacio6.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <h5 class="card-title"><?= $apps[5]['Titol']; ?></h5>
+                            <p class="card-text">Preu: <?= $apps[5]['Preu_Alta']; ?></p>
+                            <p class="card-text">Habitacions: <?= $apps[5]['N_Habitacions']; ?></p>
+                            <p class="card-text">Adreça: <?= $apps[5]['Adreca_Postal']; ?></p>
       </div>
     </div>
   </div>

@@ -74,15 +74,15 @@ class Users {
     public function getRooms(){
         $stm = $this->sql->prepare("select * from APARTAMENTOS;");
         $stm->execute();
-        $tasks = array();
+        $apps = array();
 
-        while ($task = $stm->fetch(\PDO::FETCH_ASSOC)) {
-            $tasks[] = $task;
+        while ($app = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $apps[] = $app;
         }
      
 
         
-        return $tasks; 
+        return $apps; 
     }
     public function AddApps($titol,$preu_alta,$preu_baixa,$temorades,$longitud,$latitud,$n_habitacions,$metres_quadrats,$descripcio,$adreca_postal){
         $stm = $this->sql->prepare('insert into apartamentos (titol, preu_alta, preu_baixa, temporades, longitud, latitud, n_habitacions, metres_quadrats, descripcio, adreca_postal) values (:titol, :preu_alta, :preu_baixa, :temporades, :longitud, :latitud, :n_habitacions, :metres_quadrats, :descripcio, :adreca_postal);');
