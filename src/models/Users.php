@@ -75,9 +75,11 @@ class Users {
         $stm = $this->sql->prepare("select * from APARTAMENTOS;");
         $stm->execute();
         $tasks = array();
+
         while ($task = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $tasks[] = $task;
         }
+     
 
         
         return $tasks; 
