@@ -80,6 +80,7 @@ class Users {
             $apps[] = $app;
         }
      
+     
 
         
         return $apps; 
