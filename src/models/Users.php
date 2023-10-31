@@ -89,6 +89,11 @@ class Users {
         $result = $stm->execute([':titol'=>$titol, ':preu_alta'=>$preu_alta, ':preu_baixa'=>$preu_baixa, ':temporades'=>$temporades, ':longitud'=>$longitud, ':latitud'=>$latitud, ':n_habitacions'=>$n_habitacions, ':metres_quadrats'=>$metres_quadrats, ':descripcio'=>$descripcio, ':adreca_postal'=>$adreca_postal ]);
     }
 
+    public function deleteRoom($id){
+        $stm = $this->sql->prepare("DELETE FROM apartamentos WHERE id = :id");
+        $stm->execute([':id' => $id]);
+    }
+
 
 
 }

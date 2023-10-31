@@ -18,6 +18,9 @@ include "../src/Emeset/Response.php";
 include "../src/controllers/do_reserve.php";
 include "../src/controllers/check_reserve.php";
 include "../src/controllers/rooms.php";
+include "../src/controllers/add_apps.php";
+include "../src/controllers/do_add.php";
+include "../src/controllers/deleteRoom.php";
 
  $request = new \Emeset\Request();
  $response = new \Emeset\Response();
@@ -55,8 +58,15 @@ elseif($r == "check_reserve") {
 }
 elseif($r == "rooms") {
   $response = isLogged($request, $response, $container,"CtrlRooms");
-} else {
+} elseif($r == "add_apps") {
+  $response = isLogged($request, $response, $container,"CtrlAdd_apps");
+} elseif($r == "do_add") {
+  $response = ctrlDoAdd($request, $response, $container);
+} elseif($r == "delete") {
+  $response = CtrlDeleteRoom($request, $response, $container);
+}
+ else {
      $response = ctrlLogin($request, $response, $container);
- }
+ } 
 
   $response->response();
