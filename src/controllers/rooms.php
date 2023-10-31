@@ -1,5 +1,8 @@
+
+
 <?php
 
+session_start();
 
 function CtrlRooms($request, $response, $container) {
 
