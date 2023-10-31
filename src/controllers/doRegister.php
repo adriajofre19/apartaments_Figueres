@@ -12,9 +12,10 @@ function ctrlDoRegister($request, $response, $container){
     $card = $request->get(INPUT_POST, "card");
     $user = $request->get(INPUT_POST, "user");
     $pass = $request->get(INPUT_POST, "pass");
+    $rol = $request->get(INPUT_POST, "rol");
     
 
-    $taskModel->addUser($nom,$cognoms,$email,$telefon,$card,$user,$pass);
+    $taskModel->addUser($nom,$cognoms,$email,$telefon,$card,$user,$pass,$rol);
 
 
     $response->redirect("location: index.php?r=login");

@@ -40,9 +40,9 @@ class Users {
         }
     }
 
-    public function addUser($nom,$cognoms,$email,$telefon,$card,$user,$pass) {
-        $stm = $this->sql->prepare('insert into users (nom, cognoms, email, telefon, card, user, pass) values (:nom, :cognoms,:email, :telefon, :card, :user, :pass);');
-        $result = $stm->execute([':nom' => $nom, ':cognoms' => $cognoms, ':email' => $email, ':telefon' => $telefon, ':card' => $card, ':user' => $user, ':pass' => $pass ]);
+    public function addUser($nom,$cognoms,$email,$telefon,$card,$user,$pass,$rol) {
+        $stm = $this->sql->prepare('insert into users (nom, cognoms, email, telefon, card, user, pass, rol) values (:nom, :cognoms,:email, :telefon, :card, :user, :pass, :rol);');
+        $result = $stm->execute([':nom' => $nom, ':cognoms' => $cognoms, ':email' => $email, ':telefon' => $telefon, ':card' => $card, ':user' => $user, ':pass' => $pass, ':rol'=>$rol ]);
     }
 
     public function editUser($nom, $cognoms, $telefon, $email, $card, $user, $pass) {
