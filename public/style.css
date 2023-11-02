@@ -58,3 +58,6 @@ footer {
     border: none;
     
 }
+#map-container {
+    height: 400px;
+}
