@@ -32,64 +32,24 @@
         </button>
     </div>
 
-<div class="apartaments">
-   <div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col"><a href="index.php?r=rooms">
-    <div class="card h-100">
-      <img src="images/habitacio1.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
+<div class="apartments">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <?php foreach ($rooms as $room): ?>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/habitacio<?= $room['ID']; ?>.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#hotelModal<?= $room['ID']; ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $room['Titol']; ?></h5>
+                            <p class="card-text">Preu: <?= $room['Preu_Alta']; ?></p>
+                            <p class="card-text">Habitacions: <?= $room['N_Habitacions']; ?></p>
+                            <p class="card-text">Adreça: <?= $room['Adreca_Postal']; ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
-  </div></a>
-  <div class="col"><a href="index.php?r=rooms">
-    <div class="card h-100">
-      <img src="images/habitacio2.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a short card.</p>
-      </div>
-    </div>
-  </div></a>
-  <div class="col"><a href="index.php?r=rooms">
-    <div class="card h-100">
-      <img src="images/habitacio3.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
-  </div></a>
-  <div class="col"><a href="index.php?r=rooms">
-    <div class="card h-100">
-      <img src="images/habitacio4.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div></a>
-  <div class="col"><a href="index.php?r=rooms">
-    <div class="card h-100">
-      <img src="images/habitacio5.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div></a>
-  <div class="col"><a href="index.php?r=rooms">
-    <div class="card h-100">
-      <img src="images/habitacio6.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-</div>
-</div></a> 
+
 <footer>
 <?php include 'footer.php' ?>
 </footer>

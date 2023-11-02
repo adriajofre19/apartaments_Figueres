@@ -7,9 +7,9 @@ session_start();
 function CtrlRooms($request, $response, $container) {
 
     $taskModel = $container->users();
-    $tasks = $taskModel->getRooms();
+    $rooms = $taskModel->getRooms();
 
-    $response->set("tasks", $tasks);
+    $response->set("rooms", $rooms);
 
     $response->setTemplate("rooms.php");
     

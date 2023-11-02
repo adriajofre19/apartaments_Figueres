@@ -64,6 +64,8 @@ elseif($r == "rooms") {
   $response = ctrlDoAdd($request, $response, $container);
 } elseif($r == "delete") {
   $response = CtrlDeleteRoom($request, $response, $container);
+} elseif($r == "do_reserve") {
+  $response = ctrlDo_reserve($request, $response, $container);
 }
  else {
      $response = ctrlLogin($request, $response, $container);

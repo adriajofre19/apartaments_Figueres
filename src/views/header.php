@@ -14,7 +14,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Fer una reserva</a>
+                    <a class="nav-link" href="index.php?r=do_reserve">Fer una reserva</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Consultar reserves</a>
@@ -24,6 +24,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?r=add_apps">Afegir un apartament</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="index.php?r=adminpanel">AdminPanek</a>
                 </li>
             </ul>
         </div>
