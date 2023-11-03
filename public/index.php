@@ -2,6 +2,7 @@
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
+// hola
 include "../src/config.php";
 include "../src/controllers/index.php";
 include "../src/controllers/login.php";
