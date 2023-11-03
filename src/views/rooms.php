@@ -1,15 +1,23 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HOTELS</title>
+    <!-- Include the Leaflet library -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <script
+        src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    ></script>
 </head>
 <body>
     <header>
         <?php include 'header.php'; ?>
     </header>
+
+    <div id="mapGlobal" style="height: 500px;"></div>
+
     <div class="apartments">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <?php foreach ($apps as $app): ?>
@@ -35,7 +43,7 @@
                                     <img src="images/habitacio<?= $app['ID']; ?>.jpg" alt="<?= $app['Titol']; ?>" class="img-fluid">
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="index.php?r=delete&id=<?= $app['ID']; ?>" class="btn btn-danger">Eliminar</a>
+                                        <a href="index.php?r=deleteroom&id=<?= $app['ID']; ?>" class="btn btn-danger">Eliminar</a>
                                     </div>
                                 </div>
                             </div>
@@ -49,14 +57,10 @@
     </div>
 </div>
 
-
     
 </body>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
 <script>
     <?php foreach ($apps as $app): ?>
         var mymap<?= $app['ID']; ?> = L.map('map<?= $app['ID']; ?>-modal').setView([<?= $app['Latitud']; ?>, <?= $app['Longitud']; ?>], 25);
@@ -68,4 +72,10 @@
         L.marker([<?= $app['Latitud']; ?>, <?= $app['Longitud']; ?>]).addTo(mymap<?= $app['ID']; ?>);
     <?php endforeach; ?>
 </script>
+</body>
+</html>
+
+
+    
+</body>
 </html>

@@ -41,6 +41,10 @@
   <label class="form-label">Contrasenya</label>
   <input name="pass" type="password" class="form-control" value="<?php echo $tasks[0]['pass'] ?>">
 </div>
+<div class="mb-3">
+  <label class="form-label">Rol</label>
+  <input name="rol" type="text" class="form-control" value="<?php echo $tasks[0]['rol'] ?>">
+</div>
 <button type="submit" class="btn btn-primary">Actualitzar dades</button>
 </form>
 </div>
