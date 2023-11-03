@@ -2,14 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Include the Leaflet library -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <title>HOTELS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-    <script
-        src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    ></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
     <header>
