@@ -15,5 +15,5 @@ function ctrlDades($request, $response, $container) {
 
     return $response;
 }
-?>
+
 

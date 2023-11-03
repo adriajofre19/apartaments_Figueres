@@ -45,8 +45,8 @@ class Users {
         $result = $stm->execute([':nom' => $nom, ':cognoms' => $cognoms, ':email' => $email, ':telefon' => $telefon, ':card' => $card, ':user' => $user, ':pass' => $pass, ':rol'=>$rol ]);
     }
 
-    public function editUser($nom, $cognoms, $telefon, $email, $card, $user, $pass) {
-    $stm = $this->sql->prepare("UPDATE users SET nom = :nom, cognoms = :cognoms, telefon = :telefon, email = :email, card = :card, user = :user, pass = :pass WHERE user = :user");
+    public function editUser($nom, $cognoms, $telefon, $email, $card, $user, $pass, $rol) {
+    $stm = $this->sql->prepare("UPDATE users SET nom = :nom, cognoms = :cognoms, telefon = :telefon, email = :email, card = :card, user = :user, pass = :pass, rol = :rol WHERE user = :user");
     
     $stm->execute([
         ':nom' => $nom,
@@ -55,10 +55,27 @@ class Users {
         ':email' => $email,
         ':card' => $card,
         ':user' => $user,
-        ':pass' => $pass
+        ':pass' => $pass,
+        ':rol' => $rol
     ]);
 }
 
+    public function editRoom($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats, $adreca_postal) {
+    $stm = $this->sql->prepare("UPDATE apartamentos SET titol = :titol, preu_alta = :preu_alta, preu_baixa = :preu_baixa, temporades = :temporades, longitud = :longitud, latitud = :latitud, n_habitacions = :n_habitacions, metres_quadrats = :metres_quadrats, adreca_postal = :adreca_postal WHERE titol = :titol");
+
+    $stm->execute([
+        ':titol' => $titol,
+        ':preu_alta' => $preu_alta,
+        ':preu_baixa' => $preu_baixa,
+        ':temporades' => $temporades,
+        ':longitud' => $longitud,
+        ':latitud' => $latitud,
+        ':n_habitacions' => $n_habitacions,
+        ':metres_quadrats' => $metres_quadrats,
+        ':adreca_postal' => $adreca_postal
+    
+    ]);
+}
 
 
      public function getUserData($userId) {
@@ -75,13 +92,16 @@ class Users {
     public function getRooms(){
         $stm = $this->sql->prepare("select * from APARTAMENTOS;");
         $stm->execute();
-        $rooms = array();
+        $apps = array();
 
-        while ($room = $stm->fetch(\PDO::FETCH_ASSOC)) {
-            $rooms[] = $room;
+        while ($app = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $apps[] = $app;
         }
+     
+     
 
-        return $rooms; 
+        
+        return $apps; 
     }
     public function AddApps($titol,$preu_alta,$preu_baixa,$temorades,$longitud,$latitud,$n_habitacions,$metres_quadrats,$descripcio,$adreca_postal){
         $stm = $this->sql->prepare('insert into apartamentos (titol, preu_alta, preu_baixa, temporades, longitud, latitud, n_habitacions, metres_quadrats, descripcio, adreca_postal) values (:titol, :preu_alta, :preu_baixa, :temporades, :longitud, :latitud, :n_habitacions, :metres_quadrats, :descripcio, :adreca_postal);');
@@ -92,6 +112,22 @@ class Users {
         $stm = $this->sql->prepare("DELETE FROM apartamentos WHERE id = :id");
         $stm->execute([':id' => $id]);
     }
+
+    public function getUsers(){
+        $stm = $this->sql->prepare("select * from users;");
+        $stm->execute();
+        $apps = array();
+
+        while ($app = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $apps[] = $app;
+    }
+    return $apps;
+}
+
+    public function deleteUser($id){
+            $stm = $this->sql->prepare("DELETE FROM users WHERE id = :id");
+            $stm->execute([':id' => $id]);
+        }
 
 
 

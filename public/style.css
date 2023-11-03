@@ -58,3 +58,26 @@ footer {
     border: none;
     
 }
+#map-container {
+    height: 400px;
+}
+
+#mapGlobal{
+    margin-bottom: 100px;
+}
+
+.panel {
+    display: inline-block;
+    width: 8%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.dades{
+    font-style: bold;
+}
+.accordion-button{
+    background-color: #b1b1b1;
+}

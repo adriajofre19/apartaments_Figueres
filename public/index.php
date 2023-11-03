@@ -21,6 +21,9 @@ include "../src/controllers/rooms.php";
 include "../src/controllers/add_apps.php";
 include "../src/controllers/do_add.php";
 include "../src/controllers/deleteRoom.php";
+include "../src/controllers/adminpanel.php";
+include "../src/controllers/deleteUser.php";
+include "../src/controllers/doUpdateRoom.php";
 
  $request = new \Emeset\Request();
  $response = new \Emeset\Response();
@@ -62,10 +65,16 @@ elseif($r == "rooms") {
   $response = isLogged($request, $response, $container,"CtrlAdd_apps");
 } elseif($r == "do_add") {
   $response = ctrlDoAdd($request, $response, $container);
-} elseif($r == "delete") {
+} elseif($r == "deleteroom") {
   $response = CtrlDeleteRoom($request, $response, $container);
 } elseif($r == "do_reserve") {
   $response = ctrlDo_reserve($request, $response, $container);
+} elseif($r == "adminpanel") {
+  $response = ctrlAdminPanel($request, $response, $container);
+} elseif($r == "deleteuser") {
+  $response = CtrlDeleteUser($request, $response, $container);
+} elseif($r == "doupdateroom") {
+  $response = ctrlDoUpdateRoom($request, $response, $container);
 }
  else {
      $response = ctrlLogin($request, $response, $container);

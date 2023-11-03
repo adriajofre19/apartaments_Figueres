@@ -26,7 +26,7 @@
                     <a class="nav-link" href="index.php?r=add_apps">Afegir un apartament</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="index.php?r=adminpanel">AdminPanek</a>
+                    <a class="nav-link" href="index.php?r=adminpanel">AdminPanel</a>
                 </li>
             </ul>
         </div>
@@ -55,4 +55,6 @@
         <?php } ?>
     </div>
 </nav>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
