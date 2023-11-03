@@ -57,31 +57,10 @@
     </div>
 </div>
 
-    <script>
-        var map = L.map("mapGlobal").setView([0, 0], 2); // El centro y el zoom iniciales no importan
-
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            attribution:
-                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        var bounds = new L.LatLngBounds(); // Inicializa los límites del mapa
-
-        <?php foreach ($apps as $app): ?>
-            var lat = <?= $app['Latitud']; ?>;
-            var lng = <?= $app['Longitud']; ?>;
-            var marker = L.marker([lat, lng]).addTo(map);
-            marker.bindPopup("<?= $app['Titol']; ?>"); // Puedes personalizar el contenido del marcador
-
-            bounds.extend([lat, lng]); // Extiende los límites del mapa para abarcar esta ubicación
-        <?php endforeach; ?>
-
-        // Ajusta el mapa para abarcar todos los marcadores
-        map.fitBounds(bounds);
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+    
+</body>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     <?php foreach ($apps as $app): ?>
         var mymap<?= $app['ID']; ?> = L.map('map<?= $app['ID']; ?>-modal').setView([<?= $app['Latitud']; ?>, <?= $app['Longitud']; ?>], 25);
