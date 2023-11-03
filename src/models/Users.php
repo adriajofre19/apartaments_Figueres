@@ -130,5 +130,20 @@ class Users {
         }
 
 
+        public function AddReserves($id_usuari,$id_apartament,$data_entrada,$data_sortida,$preu_per_dia,$num_persones){
+            $stm = $this->sql->prepare('id_usuari,id_apartament,data_entrada,data_sortida,preu_per_dia,num_persones) values (:id_usuari,:id_apartament,:data_entrada,:data_sortida,:preu_per_dia,:num_persones');
+            $result = $stm->execute([':id_usuari'=>$id_usuari, ':id_apartament'=>$id_apartament, ':data_entrada'=>$data_entrada, ':data_sortida'=>$data_sortida, ':preu_per_dia'=>$preu_per_dia,':num_persones'=>$num_persones]);
+        }
+
+        public function getReserves(){
+            $stm = $this->sql->prepare("select * from reserva;");
+            $stm->execute();
+            $reserves = array();
+    
+            while ($app = $stm->fetch(\PDO::FETCH_ASSOC)) {
+                $reserves[] = $reserve;
+            }
+            return $reserves;
+        }
 
 }
