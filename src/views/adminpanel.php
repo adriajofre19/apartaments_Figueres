@@ -35,7 +35,7 @@
                 
                     <div class="container2">
                         <form action="index.php" method="post">
-                        <input type="hidden" name="r" value="doupdate">
+                        <input type="hidden" name="r" value="doupdateuser">
                         <div class="mb-3">
                         <input name="nom" type="text" class="form-control panel" value="<?php echo $app['Nom'] ?>">
                         <input name="cognoms" type="text" class="form-control panel" value="<?php echo $app['Cognoms'] ?>">
@@ -52,6 +52,23 @@
                         </div>
                 
             <?php endforeach; ?>
+
+            <div class="container2">
+                        <form action="index.php" method="post">
+                        <input type="hidden" name="r" value="doregister">
+                        <div class="mb-3">
+                        <input name="nom" type="text" class="form-control panel">
+                        <input name="cognoms" type="text" class="form-control panel">
+                        <input name="telefon" type="text" class="form-control panel">
+                        <input name="email" type="text" class="form-control panel">
+                        <input name="card" type="text" class="form-control panel">
+                        <input name="user" type="text" class="form-control panel">
+                        <input name="pass" type="text" class="form-control panel">
+                        <input name="rol" type="text" class="form-control panel">
+                        <button type="submit" class="btn btn-primary">Crear usuari</button>
+                        </div>
+                        </form>
+                        </div>
         
       </div>
     </div>

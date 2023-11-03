@@ -25,9 +25,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?r=add_apps">Afegir un apartament</a>
                 </li>
+            
+            <?php $user = $_SESSION['user'];    
+            if ($user['rol'] == "admin"){ ?>
                 <li>
                     <a class="nav-link" href="index.php?r=adminpanel">AdminPanel</a>
                 </li>
+            <?php } else { ?>
+        
+            <?php } ?>
+    
             </ul>
         </div>
 

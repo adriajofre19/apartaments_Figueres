@@ -18,6 +18,6 @@ function ctrlDoRegister($request, $response, $container){
     $taskModel->addUser($nom,$cognoms,$email,$telefon,$card,$user,$pass,$rol);
 
 
-    $response->redirect("location: index.php?r=login");
+    $response->redirect("location: index.php?r=adminpanel");
     return $response;
 }
