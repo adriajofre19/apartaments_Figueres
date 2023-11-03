@@ -2,7 +2,7 @@
 
 session_start();
 
-function ctrlDoUpdate($request, $response, $container){
+function ctrlDoUpdateUser($request, $response, $container){
 
     $taskModel = $container->users();
     $nom = $request->get(INPUT_POST, "nom");
@@ -17,7 +17,11 @@ function ctrlDoUpdate($request, $response, $container){
 
     $taskModel->editUser($nom,$cognoms,$telefon,$email,$card,$user,$pass,$rol);
 
-
-    $response->redirect("location: index.php?r=index");
+    if ($adminUser = true){
+        $response->redirect("location: index.php?r=adminpanel");
+    } else {
+        $response->redirect("location: index.php?r=index");
+    }
+    
     return $response;
 }

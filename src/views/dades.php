@@ -12,38 +12,38 @@
 
     <div class="container">
 <form action="index.php" method="post">
-<input type="hidden" name="r" value="doupdate">
+<input type="hidden" name="r" value="doupdateuser">
 <div class="mb-3">
   <label class="form-label">Nom</label>
-  <input name="nom" type="text" class="form-control" value="<?php echo $tasks[0]['nom'] ?>">
+  <input name="nom" type="text" class="form-control" value="<?php echo $tasks['nom'] ?>">
 </div>
 <div class="mb-3">
   <label class="form-label">Cognoms</label>
-  <input name="cognoms" type="text" class="form-control" value="<?php echo $tasks[0]['cognoms'] ?>">
+  <input name="cognoms" type="text" class="form-control" value="<?php echo $tasks['cognoms'] ?>">
 </div>
 <div class="mb-3">
   <label class="form-label">Telèfon</label>
-  <input name="telefon" type="text" class="form-control" value="<?php echo $tasks[0]['telefon'] ?>">
+  <input name="telefon" type="text" class="form-control" value="<?php echo $tasks['telefon'] ?>">
 </div>
 <div class="mb-3">
   <label class="form-label">Email</label>
-  <input name="email" type="text" class="form-control" value="<?php echo $tasks[0]['email'] ?>">
+  <input name="email" type="text" class="form-control" value="<?php echo $tasks['email'] ?>">
 </div>
 <div class="mb-3">
   <label class="form-label">Targeta de credit</label>
-  <input name="card" type="text" class="form-control" value="<?php echo $tasks[0]['card'] ?>">
+  <input name="card" type="text" class="form-control" value="<?php echo $tasks['card'] ?>">
 </div>
 <div class="mb-3">
   <label class="form-label">Usuari</label>
-  <input name="user" type="text" class="form-control" value="<?php echo $tasks[0]['user'] ?>">
+  <input name="user" type="text" class="form-control" value="<?php echo $tasks['user'] ?>">
 </div>
 <div class="mb-3">
   <label class="form-label">Contrasenya</label>
-  <input name="pass" type="password" class="form-control" value="<?php echo $tasks[0]['pass'] ?>">
+  <input name="pass" type="password" class="form-control" value="<?php echo $tasks['pass'] ?>">
 </div>
 <div class="mb-3">
   <label class="form-label">Rol</label>
-  <input name="rol" type="text" class="form-control" value="<?php echo $tasks[0]['rol'] ?>">
+  <input name="rol" type="text" class="form-control" value="<?php echo $tasks['rol'] ?>" disabled>
 </div>
 <button type="submit" class="btn btn-primary">Actualitzar dades</button>
 </form>

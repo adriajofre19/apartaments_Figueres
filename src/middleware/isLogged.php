@@ -2,7 +2,6 @@
 
 function isLogged($request, $response, $container, $next){
 
-    // Aquí va el codi del middleware
     $logged = $request->get("SESSION", "logged");
 
     if(!$logged) {
@@ -16,4 +15,20 @@ function isLogged($request, $response, $container, $next){
 
     return $response;
     
+}
+
+function isAdmin($request, $response, $container, $next){
+    
+        if(isset($_SESSION['user'])) {
+            $user = $_SESSION['user'];
+                
+            if ($user['rol'] == "admin"){
+                $adminUser = true;
+                $next($request, $response, $container);
+            } else {
+                $response->redirect("location: index.php");
+                
+            }
+        } 
+        return $response;
 }

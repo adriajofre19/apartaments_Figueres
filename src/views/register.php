@@ -10,11 +10,10 @@
   <h1 class="account">Crea un compte</h1>
   <form class="form-registrar" action="index.php" method="post">
     <input type="hidden" name="r" value="doregister">
-    <select name ="rol" class="form-select form-select-sm" aria-label="Small select example">
-  <option selected>Escull el rol...</option>
-  <option value="Gestor">Gestor</option>
-  <option value="Usuari">Usuari</option>
-</select>
+<div class="mb-3">
+      <input value="usuari" name="rol" type="hidden" class="form-control" id="input" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text"></div>
+    </div>
     <div class="mb-3">
       <label for="exampleInputName1" class="form-label">Nom</label>
       <input name="nom" type="text" class="form-control" id="input" aria-describedby="emailHelp">
