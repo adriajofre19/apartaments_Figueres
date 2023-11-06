@@ -1,3 +1,6 @@
+<?php
+print_r($user['ID']);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,13 +11,15 @@
     <header>
         <?php include 'header.php' ?>
     </header>
+
+    
     <div class="container">
         <h1 class="mt-5">Formulari de Reserva</h1>
         <form class="form-registrar" action="index.php" method="post">
     <input type="hidden" name="r" value="addreserve">
     <div class="mb-3">
       <label for="exampleInputName1" class="form-label">Id usuari</label>
-      <input name="ID_Usuari" type="text" class="form-control" id="input" aria-describedby="emailHelp">
+      <input name="ID_Usuari" type="text" class="form-control" id="input" aria-describedby="emailHelp" value="<?php echo $user['ID'] ?>">
       <div id="emailHelp" class="form-text"></div>
     </div>
     <div class="mb-3">
@@ -49,6 +54,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
 
