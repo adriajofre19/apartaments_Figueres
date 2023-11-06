@@ -12,8 +12,8 @@ $(document).ready(function() {
 
             success: function(apartment) {
 
-                    console.log(apartment.Longitud);
-                    
+                    console.log(apartment);
+                    jQuery("#Titol").html(apartment.Titol);
                     var map = L.map('map').setView([apartment.Latitud, apartment.Longitud], 7);
 
                     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
