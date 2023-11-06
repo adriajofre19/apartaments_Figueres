@@ -1,10 +1,15 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HOTELS</title>
+    <!-- Include the Leaflet library -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <script
+        src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    ></script>
 </head>
 <body>
     <header>
@@ -38,7 +43,6 @@
                                     <img src="images/habitacio<?= $app['ID']; ?>.jpg" alt="<?= $app['Titol']; ?>" class="img-fluid">
                                     </div>
                                     <div class="modal-footer">
-                                    <a href="index.php?r=reserve_id&id<?= $app['ID']; ?>&preu=<?= $app['Preu_Alta']; ?>" class="btn btn-primary">Fer reserva</a>
                                         <a href="index.php?r=deleteroom&id=<?= $app['ID']; ?>" class="btn btn-danger">Eliminar</a>
                                     </div>
                                 </div>
@@ -46,37 +50,17 @@
                         </div>
                         <!-- Fin del modal -->
                     </div>
+                    <div id="map<?= $app['ID']; ?>-modal" style="height: 300px;"></div>
                 </div>
             </div>
         <?php endforeach; ?>
     </div>
 </div>
 
-    <script>
-        var map = L.map("mapGlobal").setView([0, 0], 2); // El centro y el zoom iniciales no importan
-
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            attribution:
-                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        var bounds = new L.LatLngBounds(); // Inicializa los límites del mapa
-
-        <?php foreach ($apps as $app): ?>
-            var lat = <?= $app['Latitud']; ?>;
-            var lng = <?= $app['Longitud']; ?>;
-            var marker = L.marker([lat, lng]).addTo(map);
-            marker.bindPopup("<?= $app['Titol']; ?>"); // Puedes personalizar el contenido del marcador
-
-            bounds.extend([lat, lng]); // Extiende los límites del mapa para abarcar esta ubicación
-        <?php endforeach; ?>
-
-        // Ajusta el mapa para abarcar todos los marcadores
-        map.fitBounds(bounds);
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+    
+</body>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     <?php foreach ($apps as $app): ?>
         var mymap<?= $app['ID']; ?> = L.map('map<?= $app['ID']; ?>-modal').setView([<?= $app['Latitud']; ?>, <?= $app['Longitud']; ?>], 25);
@@ -87,7 +71,17 @@
 
         L.marker([<?= $app['Latitud']; ?>, <?= $app['Longitud']; ?>]).addTo(mymap<?= $app['ID']; ?>);
     <?php endforeach; ?>
-</script>  
+</script>
+</body>
+</html>
+
+
+    
+</body>
+</html>
+
+
+    
 </body>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

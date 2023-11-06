@@ -8,8 +8,10 @@ function ctrlDades($request, $response, $container) {
     
     $user = $request->get("SESSION", "user");
     
-    $tasks = $taskModel->getUserData($user["id"]);
+    $tasks = $taskModel->getUserData($user["ID"]);
+    
     $response->set("tasks", $tasks);
+    
     $response->setTemplate("dades.php");
     
 

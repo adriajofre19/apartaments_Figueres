@@ -9,7 +9,7 @@ include "../src/controllers/register.php";
 include "../src/controllers/doLogin.php";
 include "../src/controllers/doRegister.php";
 include "../src/controllers/dades.php";
-include "../src/controllers/doUpdate.php";
+include "../src/controllers/doUpdateUser.php";
 include "../src/controllers/doLogout.php";
 include "../src/middleware/isLogged.php";
 include "../src/Emeset/Container.php";
@@ -24,9 +24,8 @@ include "../src/controllers/deleteRoom.php";
 include "../src/controllers/adminpanel.php";
 include "../src/controllers/deleteUser.php";
 include "../src/controllers/doUpdateRoom.php";
-include "../src/controllers/reserve_id.php";
-include "../src/controllers/do_add_reserve.php";
-include "../src/controllers/reserve_add.php";
+include "../src/controllers/doUpdateAdmin.php";
+include "../src/controllers/addReserve.php";
 
  $request = new \Emeset\Request();
  $response = new \Emeset\Response();
@@ -50,9 +49,9 @@ if($r == "") {
 } elseif($r == "doregister") {
   $response = ctrlDoRegister($request, $response, $container);
 } elseif($r == "dades") {
-  $response = isLogged($request, $response, $container, "CtrlDades");
-} elseif($r == "doupdate") {
-  $response = ctrlDoUpdate($request, $response, $container);
+  $response = CtrlDades($request, $response, $container);
+} elseif($r == "doupdateuser") {
+  $response = ctrlDoUpdateUser($request, $response, $container);
 } elseif ($r == "dologout"){
   $response = CtrlDoLogout($reques, $response, $container);
 }
@@ -70,19 +69,17 @@ elseif($r == "rooms") {
   $response = ctrlDoAdd($request, $response, $container);
 } elseif($r == "deleteroom") {
   $response = CtrlDeleteRoom($request, $response, $container);
+} elseif($r == "do_reserve") {
+  $response = ctrlDo_reserve($request, $response, $container);
 } elseif($r == "adminpanel") {
-  $response = ctrlAdminPanel($request, $response, $container);
+  $response = isAdmin($request, $response, $container, "ctrlAdminPanel");
 } elseif($r == "deleteuser") {
   $response = CtrlDeleteUser($request, $response, $container);
 } elseif($r == "doupdateroom") {
   $response = ctrlDoUpdateRoom($request, $response, $container);
-}elseif($r == "do_reserve") {
-  $response = ctrlDo_reserve($request, $response, $container);
-}elseif($r == "do_add_reserve") {
-  $response = ctrlDo_add_reserve($request, $response, $container);
-}elseif($r == "reserve_add") {
-  $response = ctrlreserve_Add($request, $response, $container);
-}
+} elseif($r == "addreserve") {
+  $response = ctrlAddReserve($request, $response, $container);
+} 
  else {
      $response = ctrlLogin($request, $response, $container);
  } 

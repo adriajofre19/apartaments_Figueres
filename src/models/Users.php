@@ -30,7 +30,7 @@ class Users {
 
 
     public function login($user, $pass){
-        $stm = $this->sql->prepare('select id, user, pass from users where user=:user;');
+        $stm = $this->sql->prepare('select * from users where user=:user;');
         $stm->execute([':user' => $user]);
         $result = $stm->fetch(\PDO::FETCH_ASSOC);
         if(is_array($result) && $result["pass"] == $pass){
@@ -79,16 +79,15 @@ class Users {
 
 
      public function getUserData($userId) {
-        $stm = $this->sql->prepare("select id, nom, cognoms, telefon, email, card, user, pass from users where id = :user_id;");
+        $stm = $this->sql->prepare("select id, nom, cognoms, telefon, email, card, user, pass, rol from users where id = :user_id;");
         $stm->execute([':user_id' => $userId]);
         
-        $tasks = array();
-        
-        while ($task = $stm->fetch(\PDO::FETCH_ASSOC)) {
-            $tasks[] = $task;
-        }
+        $tasks = $stm->fetch(\PDO::FETCH_ASSOC);
         return $tasks;
+
+    
     }
+
     public function getRooms(){
         $stm = $this->sql->prepare("select * from APARTAMENTOS;");
         $stm->execute();
@@ -129,21 +128,11 @@ class Users {
             $stm->execute([':id' => $id]);
         }
 
-
-        public function AddReserves($id_usuari,$id_apartament,$data_entrada,$data_sortida,$preu_per_dia,$num_persones){
-            $stm = $this->sql->prepare('id_usuari,id_apartament,data_entrada,data_sortida,preu_per_dia,num_persones) values (:id_usuari,:id_apartament,:data_entrada,:data_sortida,:preu_per_dia,:num_persones');
-            $result = $stm->execute([':id_usuari'=>$id_usuari, ':id_apartament'=>$id_apartament, ':data_entrada'=>$data_entrada, ':data_sortida'=>$data_sortida, ':preu_per_dia'=>$preu_per_dia,':num_persones'=>$num_persones]);
+        public function addReserva($ID_Usuari, $ID_Apartament, $Data_Entrada, $Data_Sortida, $Preu_Per_Dia, $n_persones){
+            $stm = $this->sql->prepare('insert into reserva (ID_Usuari, ID_Apartament, Data_Entrada, Data_Sortida, Preu_Per_Dia, n_persones) values (:ID_Usuari, :ID_Apartament, :Data_Entrada, :Data_Sortida, :Preu_Per_Dia, :n_persones);');
+            $result = $stm->execute([':ID_Usuari'=>$ID_Usuari, ':ID_Apartament'=>$ID_Apartament, ':Data_Entrada'=>$Data_Entrada, ':Data_Sortida'=>$Data_Sortida, ':Preu_Per_Dia'=>$Preu_Per_Dia, ':n_persones'=>$n_persones ]);
         }
 
-        public function getReserves(){
-            $stm = $this->sql->prepare("select * from reserva;");
-            $stm->execute();
-            $reserves = array();
-    
-            while ($app = $stm->fetch(\PDO::FETCH_ASSOC)) {
-                $reserves[] = $reserve;
-            }
-            return $reserves;
-        }
+
 
 }
