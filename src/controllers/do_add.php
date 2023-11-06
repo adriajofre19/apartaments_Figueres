@@ -15,9 +15,14 @@ function ctrlDoAdd($request, $response, $container){
     $metres_quadrats = $request->get(INPUT_POST, "metres_quadrats");
     $descripcio = $request->get(INPUT_POST, "descripcio");
     $adreca_postal = $request->get(INPUT_POST, "adreca_postal");
+    
     $taskModel->AddApps($titol,$preu_alta,$preu_baixa,$temorades,$longitud,$latitud,$n_habitacions,$metres_quadrats,$descripcio,$adreca_postal);
 
-
-    $response->redirect("location: index.php?r=rooms");
+    if ($adminUser = true){
+        $response->redirect("location: index.php?r=adminpanel");
+    } else {
+        $response->redirect("location: index.php?r=rooms");
+    }
+    
     return $response;
 }
