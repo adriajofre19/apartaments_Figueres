@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+<<<<<<< HEAD
 
      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -16,6 +17,8 @@
      crossorigin=""></script>
 
 
+=======
+>>>>>>> 49cd3a09a77f8f2508f84056eef547dff8bbbfcd
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
@@ -26,6 +29,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
+<<<<<<< HEAD
     
 
 
@@ -33,6 +37,11 @@
 <body>
 
     <header>
+=======
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<header>
+>>>>>>> 49cd3a09a77f8f2508f84056eef547dff8bbbfcd
         <?php include 'header.php'; ?>
     </header>
 
@@ -71,8 +80,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+<<<<<<< HEAD
         <img src="images/habitacio<?= $app['ID']; ?>.jpg" class="card-img-top" alt="...">
         <div id="map"></div>
+=======
+>>>>>>> 49cd3a09a77f8f2508f84056eef547dff8bbbfcd
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Reservar</button>
@@ -80,9 +92,20 @@
     </div>
   </div>
 </div>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        var mapGlobal = L.map('mapGlobal').setView([<?= $apps[0]['Latitud']; ?>, <?= $apps[0]['Longitud']; ?>], 15);
 
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(mapGlobal);
+
+        <?php foreach ($apps as $app): ?>
+            L.marker([<?= $app['Latitud']; ?>, <?= $app['Longitud']; ?>]).addTo(mapGlobal);
+        <?php endforeach; ?>
+    </script>
 </body>
 </html>

@@ -58,10 +58,9 @@ footer {
     border: none;
     
 }
-#map {
+#mapGlobal {
     position: relative;
     height: 300px;
-    outline-style: none;
 }
 
 

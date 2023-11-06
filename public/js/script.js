@@ -13,7 +13,6 @@ $(document).ready(function() {
             success: function(apartment) {
 
                     console.log(apartment);
-                    jQuery("#ID").html(apartment.ID);
                     jQuery("#Titol").html(apartment.Titol);
                     var map = L.map('map').setView([apartment.Latitud, apartment.Longitud], 7);
 
