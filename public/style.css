@@ -58,13 +58,13 @@ footer {
     border: none;
     
 }
-#map-container {
-    height: 400px;
+#map {
+    position: relative;
+    height: 300px;
+    outline-style: none;
 }
 
-#mapGlobal{
-    margin-bottom: 100px;
-}
+
 
 .panel {
     display: inline-block;

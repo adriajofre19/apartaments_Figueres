@@ -29,19 +29,7 @@
         </div>
     </div>
 
+
     
 </body>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    <?php foreach ($tasks as $task): ?>
-        var mymap<?= $task['ID']; ?> = L.map('map<?= $task['ID']; ?>-modal').setView([<?= $task['Latitud']; ?>, <?= $task['Longitud']; ?>], 25);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(mymap<?= $task['ID']; ?>);
-
-        L.marker([<?= $task['Latitud']; ?>, <?= $task['Longitud']; ?>]).addTo(mymap<?= $task['ID']; ?>);
-    <?php endforeach; ?>
-</script>
 </html>
