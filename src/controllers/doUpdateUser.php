@@ -13,7 +13,9 @@ function ctrlDoUpdateUser($request, $response, $container){
     $user = $request->get(INPUT_POST, "user");
     $pass = $request->get(INPUT_POST, "pass");
     $rol = $request->get(INPUT_POST, "rol");
-    
+
+    print_r($nom);
+    die();
 
     $taskModel->editUser($nom,$cognoms,$telefon,$email,$card,$user,$pass,$rol);
 

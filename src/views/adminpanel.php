@@ -101,6 +101,7 @@
             <form action="index.php" method="post">
             <input type="hidden" name="r" value="doupdateroom">
             <div class="mb-3">
+              
                 <input name="titol" type="text" class="form-control panel" value="<?php echo $room['Titol'] ?>">
                 <input name="preu_alta" type="text" class="form-control panel" value="<?php echo $room['Preu_Alta'] ?>">
                 <input name="preu_baixa" type="text" class="form-control panel" value="<?php echo $room['Preu_Baixa'] ?>">
@@ -113,7 +114,9 @@
                 <input name="adreca_postal" type="text" class="form-control panel" value="<?php echo $room['Adreca_Postal'] ?>">
                 <button type="submit" class="btn btn-primary">Actualitzar dades</button>
                 <a href="index.php?r=deleteroom&id=<?= $room['ID']; ?>" class="btn btn-danger">Eliminar</a>
+                
             </div>
+            </form>
         </div>
         <?php endforeach; ?>
 
