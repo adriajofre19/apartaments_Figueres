@@ -10,8 +10,6 @@ function ctrlCheck_reserve($request, $response, $container) {
 
     $reserves = $taskModel->getReserveById($ID_Usuari);
 
-    print_r($reserves);
-
     $response->set("reserves", $reserves);
 
     $response->setTemplate("check_reserve.php");

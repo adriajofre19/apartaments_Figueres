@@ -25,6 +25,7 @@ include "../src/controllers/deleteUser.php";
 include "../src/controllers/doUpdateRoom.php";
 include "../src/controllers/addReserve.php";
 include "../src/controllers/openModal.php";
+include "../src/controllers/generate_pdf.php";
 
  $request = new \Emeset\Request();
  $response = new \Emeset\Response();
@@ -115,6 +116,8 @@ elseif($r == "rooms") {
     $response->response();
 
 } elseif($r == "openModal") {
+  $response = ctrlOpenModal($request, $response, $container);
+} elseif($r == "generate_pdf") {
   $response = ctrlOpenModal($request, $response, $container);
 }
  else {
