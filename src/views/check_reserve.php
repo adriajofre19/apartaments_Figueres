@@ -1,6 +1,3 @@
-<?php
-print_r($reserves);
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,34 +9,7 @@ print_r($reserves);
     <header>
         <?php include 'header.php' ?>
     </header>
-    
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <?php foreach ($reserves as $reserva): ?>
-            <div class="col">
-                <div class="card h-100">
-                        
-                    <div class="card-body">
-                        <h6>ID_Usuari</h6>
-                        <p class="card-text"><?php echo $reserva['ID_Usuari']; ?></p>
-                        <h6>ID_Apartament</h6>
-                        <p class="card-text"><?php echo $reserva['ID_Apartament']; ?></p>
-                        <h6>Data_Entrada</h6>
-                        <p class="card-text"><?php echo $reserva['Data_Entrada']; ?></p>
-                        <h6>Data_Sortida</h6>
-                        <p class="card-text"><?php echo $reserva['Data_Sortida']; ?></p>
-                        <h6>Preu_Total</h6>
-                        <p class="card-text"><?php echo $reserva['Preu_Per_Dia']; ?></p>
-                        <h6>Num persones</h6>
-                        <p class="card-text"><?php echo $reserva['n_persones']; ?></p>
-
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-
+    <h1>Consultar Reserves</h1>
     <footer>
 <?php include 'footer.php' ?>
 </footer>
