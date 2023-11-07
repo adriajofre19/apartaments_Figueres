@@ -20,8 +20,6 @@
         <?php include 'header.php'; ?>
     </header>
 
-    <div id="mapGlobal" style="height: 500px;"></div>
-
     <div class="apartments">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <?php foreach ($apps as $app): ?>

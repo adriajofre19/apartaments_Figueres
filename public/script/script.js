@@ -7,7 +7,6 @@ $(document).ready(function() {
         //quan tanqui el modal totes les dades del modal
         $('#exampleModal').on('hidden.bs.modal', function() {
             $(this).find('form').trigger('reset');
-            map.remove();
 
 
 
