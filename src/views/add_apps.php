@@ -30,11 +30,11 @@
 </div>
 <div class="mb-3">
   <label class="form-label">Longitud</label>
-  <input name="longitud" type="number" class="form-control">
+  <input name="longitud" type="number" class="form-control" step="any">
 </div>
 <div class="mb-3">
   <label class="form-label">Latitud</label>
-  <input name="latitud" type="number" class="form-control">
+  <input name="latitud" type="number" class="form-control" step="any">
 </div>
 <div class="mb-3">
   <label class="form-label">N_Habitacions</label>
