@@ -12,9 +12,6 @@
     <header>
         <?php include 'header.php' ?>
     </header>
-<<<<<<< HEAD
-    <h1>Consultar Reserves</h1>
-=======
     
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <?php foreach ($reserves as $reserva): ?>
@@ -79,7 +76,6 @@
     doc.save('Info_reserva.pdf');
 }
 </script>
->>>>>>> pdf
     <footer>
 <?php include 'footer.php' ?>
 </footer>
