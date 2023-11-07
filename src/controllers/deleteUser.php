@@ -8,5 +8,6 @@ function ctrlDeleteUser($request, $response, $container){
     }
     
     $response->redirect("location: index.php?r=adminpanel");
+    
     return $response;
 }

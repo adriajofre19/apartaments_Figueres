@@ -14,17 +14,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?r=do_reserve">Fer una reserva</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Consultar reserves</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="index.php?r=rooms">Apartaments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?r=check_reserve">Consultar reserves</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?r=add_apps">Afegir un apartament</a>
                 </li>
+                
             
             <?php $user = $_SESSION['user'];    
             if ($user['rol'] == "admin"){ ?>

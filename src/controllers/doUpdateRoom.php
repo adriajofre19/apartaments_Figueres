@@ -17,9 +17,9 @@ function ctrlDoUpdateRoom($request, $response, $container){
     $adreca_postal = $request->get(INPUT_POST, "adreca_postal");
 
     
-
     $taskModel->editRoom($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats, $adreca_postal);
 
+    
 
     $response->redirect("location: index.php?r=adminpanel");
     return $response;

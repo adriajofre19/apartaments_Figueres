@@ -15,7 +15,6 @@ include "../src/middleware/isLogged.php";
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
 include "../src/Emeset/Response.php";
-include "../src/controllers/do_reserve.php";
 include "../src/controllers/check_reserve.php";
 include "../src/controllers/rooms.php";
 include "../src/controllers/add_apps.php";
@@ -24,7 +23,6 @@ include "../src/controllers/deleteRoom.php";
 include "../src/controllers/adminpanel.php";
 include "../src/controllers/deleteUser.php";
 include "../src/controllers/doUpdateRoom.php";
-include "../src/controllers/doUpdateAdmin.php";
 include "../src/controllers/addReserve.php";
 include "../src/controllers/openModal.php";
 
@@ -98,10 +96,6 @@ elseif($r == "rooms") {
 
 } elseif($r == "deleteroom") {
   $response = CtrlDeleteRoom($request, $response, $container);
-    $response->response();
-
-} elseif($r == "do_reserve") {
-  $response = ctrlDo_reserve($request, $response, $container);
     $response->response();
 
 } elseif($r == "adminpanel") {

@@ -77,6 +77,8 @@ class Users {
     
     ]);
 }
+    
+
 
 
      public function getUserData($userId) {
@@ -140,6 +142,16 @@ class Users {
         return $result; 
     }
 
+    public function getReserveById($ID_Usuari){
+        $stm = $this->sql->prepare("select * from reserva where ID_Usuari = :ID_Usuari;");
+        $stm->execute([':ID_Usuari' => $ID_Usuari]);
+        $reserves = array();
+
+        while ($reserve = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $reserves[] = $reserve; 
+    }
+    return $reserves;
+    }
 
 
 }
