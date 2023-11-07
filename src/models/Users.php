@@ -142,14 +142,21 @@ class Users {
         return $result; 
     }
 
-    public function getReserveById($ID_Usuari){
-        $stm = $this->sql->prepare("select * from reserva where ID_Usuari = :ID_Usuari;");
+
+    public function getReserveById($ID_Usuari) {
+        $stm = $this->sql->prepare("
+            SELECT r.ID, u.user AS user_nombre, a.Titol AS apartamento_titulo, r.Data_Entrada, r.Data_Sortida, r.Preu_Per_Dia, r.n_persones
+            FROM reserva r
+            LEFT JOIN users u ON r.ID_Usuari = u.ID
+            LEFT JOIN apartamentos a ON r.ID_Apartament = a.ID
+            WHERE r.ID_Usuari = :ID_Usuari;
+        ");
         $stm->execute([':ID_Usuari' => $ID_Usuari]);
         $reserves = array();
-
+    
         while ($reserve = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $reserves[] = $reserve; 
+        }
+        return $reserves;
     }
-    return $reserves;
-    }
-    }
+}

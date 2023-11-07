@@ -14,27 +14,24 @@
     </header>
     
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <?php foreach ($reserves as $reserva): ?>
+        <?php foreach ($reserves as $index => $reserva): ?>
             <div class="col">
                 <div class="card h-100">
                         
                     <div class="card-body">
-                        <h6>ID_Usuari</h6>
-                        <p class="card-text"><?php echo $reserva['ID_Usuari']; ?></p>
-                        <h6>ID_Apartament</h6>
-                        <p class="card-text"><?php echo $reserva['ID_Apartament']; ?></p>
+                        <h6>Nom d'usuari</h6>
+                        <p class="card-text"><?php echo $reserva['user_nombre']; ?></p>
+                        <h6>Nom de l'apartaments</h6>
+                        <p class="card-text"><?php echo $reserva['apartamento_titulo']; ?></p>
                         <h6>Data_Entrada</h6>
                         <p class="card-text"><?php echo $reserva['Data_Entrada']; ?></p>
                         <h6>Data_Sortida</h6>
                         <p class="card-text"><?php echo $reserva['Data_Sortida']; ?></p>
                         <h6>Preu_Total</h6>
                         <p class="card-text"><?php echo $reserva['Preu_Per_Dia']; ?></p>
-                        <h6>Num persones</h6>
-                        <p class="card-text"><?php echo $reserva['n_persones']; ?></p>
-                        <button type="submit" class="btn btn-success" onclick="PDF()">Descargar PDF</button>
-
-                        
-                        
+                        <h6>Nokbre habitacions</h6>
+                        <p class="card-text"><?php echo $reserva['n_habitacions']; ?></p>
+                        <button class="btn btn-success" onclick="PDF(<?php echo $index; ?>)">Descargar PDF</button>
                     </div>
                 </div>
             </div>
@@ -43,41 +40,35 @@
     <script>
     window.jsPDF = window.jspdf.jsPDF;
 
-    function PDF() {
-    var doc = new jsPDF();
+    function PDF(index) {
+        var doc = new jsPDF();
 
-    doc.setFontSize(25);
-    doc.text('DADES DE LA RESERVA', 100, 40, { align: 'center' });
+        doc.setFontSize(25);
+        doc.text('DADES DE LA RESERVA', 100, 40, { align: 'center' });
 
-    var margenSuperiorElementos = 50;
+        var marge = 50;
+        var reserva = <?php echo json_encode($reserves); ?>; // Obtener todas las reservas
 
-    <?php foreach ($reserves as $index => $reserva) : ?>
         doc.setFontSize(16);
 
-        var y = margenSuperiorElementos + 10 * <?php echo $index; ?>;
-        doc.text('RESERVA <?php echo $index + 1; ?>:', 10, y);
-
+        var y = marge;
+        doc.text('RESERVA ' + (index + 1) + ':', 10, y);
+        y += 10;
+        doc.text("Nom d'usuari: " + reserva[index].user_nombre, 20, y);
+        y += 10;
+        doc.text("Nom de l'apartament: " + reserva[index].apartamento_titulo, 20, y);
         y += 20;
-        doc.text("Data d'entrada: <?php echo $reserva['Data_Entrada']; ?>", 20, y);
-
+        doc.text("Data d'entrada: " + reserva[index].Data_Entrada, 20, y);
         y += 10;
-        doc.text("Data de sortida: <?php echo $reserva['Data_Sortida']; ?>", 20, y);
-
+        doc.text("Data de sortida: " + reserva[index].Data_Sortida, 20, y);
         y += 10;
-        doc.text('Nombre de persones: <?php echo $reserva['n_persones']; ?>', 20, y);
+        doc.text('Nombre de persones: ' + reserva[index].n_persones, 20, y);
 
-
-
-        if (<?php echo $index; ?> < <?php echo count($reserves) - 1; ?>) {
-            doc.addPage();
-        }
-        
-    <?php endforeach; ?>
-    doc.save('Info_reserva.pdf');
-}
+        doc.save('Info_reserva_' + (index + 1) + '.pdf');
+    }
 </script>
-    <footer>
-<?php include 'footer.php' ?>
+<footer>
+    <?php include 'footer.php' ?>
 </footer>
 </body>
 </html>
