@@ -35,7 +35,36 @@
         <?php endforeach; ?>
     </div>
         </div>
+        <script>
+    window.jsPDF = window.jspdf.jsPDF;
 
+    function PDF(index) {
+        var doc = new jsPDF();
+
+        doc.setFontSize(25);
+        doc.text('DADES DE LA RESERVA', 100, 40, { align: 'center' });
+
+        var marge = 50;
+        var reserva = <?php echo json_encode($reserves); ?>; 
+
+        doc.setFontSize(16);
+
+        var y = marge;
+        doc.text('RESERVA ' + (index + 1) + ':', 10, y);
+        y += 10;
+        doc.text("Nom d'usuari: " + reserva[index].user_nombre, 20, y);
+        y += 10;
+        doc.text("Nom de l'apartament: " + reserva[index].apartamento_titulo, 20, y);
+        y += 20;
+        doc.text("Data d'entrada: " + reserva[index].Data_Entrada, 20, y);
+        y += 10;
+        doc.text("Data de sortida: " + reserva[index].Data_Sortida, 20, y);
+        y += 10;
+        doc.text('Nombre de persones: ' + reserva[index].n_persones, 20, y);
+
+        doc.save('Info_reserva_' + (index + 1) + '.pdf');
+    }
+</script>
 
 
     <footer>
