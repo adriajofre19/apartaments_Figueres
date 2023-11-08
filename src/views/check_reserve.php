@@ -28,7 +28,7 @@
                         <p class="card-text"><?php echo $reserva['Preu_Per_Dia']; ?></p>
                         <h6>Num persones</h6>
                         <p class="card-text"><?php echo $reserva['n_persones']; ?></p>
-
+                        <button class="btn btn-success" onclick="PDF(<?php echo $index; ?>)">Descargar PDF</button>
                         <a href="index.php?r=deletereserve&id=<?= $reserva['ID']; ?>" class="btn btn-danger">Eliminar</a>
   </div>
   </div>
