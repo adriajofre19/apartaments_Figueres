@@ -16,7 +16,7 @@ function ctrlDoAdd($request, $response, $container){
     $descripcio = $request->get(INPUT_POST, "descripcio");
     $adreca_postal = $request->get(INPUT_POST, "adreca_postal");
     
-    $taskModel->AddApps($titol,$preu_alta,$preu_baixa,$temorades,$longitud,$latitud,$n_habitacions,$metres_quadrats,$descripcio,$adreca_postal);
+    $taskModel->AddApps($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats,$descripcio,$adreca_postal);
 
     if ($adminUser = true){
         $response->redirect("location: index.php?r=adminpanel");

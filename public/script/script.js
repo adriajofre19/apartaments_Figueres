@@ -1,18 +1,21 @@
+var map;
 $(document).ready(function() {
 
     $(".openModal").on("click", function() {
         var apartamentId = $(this).data("apartament-id");
         console.log(apartamentId);
 
+       
+ 
+
         //quan tanqui el modal totes les dades del modal
         $('#exampleModal').on('hidden.bs.modal', function() {
             $(this).find('form').trigger('reset');
-
-
-
         });
 
         
+
+
 
         $.ajax({
 
@@ -22,6 +25,10 @@ $(document).ready(function() {
             dataType: "json", 
 
             success: function(apartment) {
+
+                if(map){
+                    map.remove();
+                }
 
                     console.log(apartment);
 
@@ -40,8 +47,8 @@ $(document).ready(function() {
                     image.attr("src", "images/habitacio" + apartment.ID + ".jpg");
 
                     $("input[name='ID_Apartament']").val(apartamentId);
-
-                    var map = L.map('map').setView([apartment.Latitud, apartment.Longitud], 13);
+                    
+                    map = L.map('map').setView([apartment.Latitud, apartment.Longitud], 13);
 
                     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         maxZoom: 19,
@@ -51,6 +58,8 @@ $(document).ready(function() {
                     var marker = L.marker([apartment.Latitud, apartment.Longitud]).addTo(map);
 
                      setTimeout(function () { map.invalidateSize() }, 300);
+
+                     
 
                     // Obtén el valor de Preu_Baixa y Preu_Alta desde tu AJAX
                     var Preu_Baixa = apartment.Preu_Baixa;
@@ -92,5 +101,14 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function() {
+            $('#users').DataTable();
+        });
 
+$(document).ready(function() {
+            $('#apartaments').DataTable();
+        });
 
+$(document).ready(function() {
+            $('#reserves').DataTable();
+        });

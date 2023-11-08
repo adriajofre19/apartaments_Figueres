@@ -20,32 +20,66 @@
         <?php include 'header.php'; ?>
     </header>
 
-    <div class="apartments">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <?php foreach ($apps as $app): ?>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="images/habitacio<?= $app['ID']; ?>.jpg" class="card-img-top" alt="...">
-                        
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $app['Titol']; ?></h5>
-                        <h6 class="card-title">Preu per dia</h6>
-                        <p class="card-text"> <?= $app['Preu_Baixa'] . " / " . $app['Preu_Alta'];?></p>
-                        <h6 class="card-title">Adreça</h6>
-                        <p class="card-text"><?= $app['Adreca_Postal']; ?></p>
-                        <h6 class="card-title">Numero d'habitacions</h6>
-                        <p class="card-text"> <?= $app['N_Habitacions']; ?></p>
-                        
-                        <button type="button" class="btn btn-primary openModal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-apartament-id="<?= $app['ID']; ?>">
-                        Mes informació
-                        </button>
-                        
-                    </div>
-                </div>
-            </div>
-        <?php endforeach; ?>
+  
+<div class="container mt-5">
+     <form method="POST" action="index.php?r=rooms">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label for="fechaEntrada" class="form-label">Fecha de Entrada</label>
+            <input name="Data_Entrada" type="date" class="form-control" id="fechaEntrada">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label for="fechaSalida" class="form-label">Fecha de Salida</label>
+            <input name="Data_Sortida" type="date" class="form-control" id="fechaSalida">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label for="numPersonas" class="form-label">Número de Personas</label>
+            <input name="n_persones" type="number" class="form-control" id="numPersonas">
+          </div>
+        </div>
+      </div>
+      <input type="submit" class="btn btn-primary" value="Enviar"></input>
+    </form>
+  </div>
+
+
+<div class="container">
+  <h2>Apartaments disponibles</h2>
+  <?php if (!empty($apps)): ?>
+    <div class="d-flex flex-wrap justify-content-between">
+      <?php foreach ($apps as $app): ?>
+        <div class="card" style="width: 18rem;">
+          
+          <img src="images/habitacio<?= $app['ID']; ?>.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><?= $app['Titol']; ?></h5>
+        <h6 class="card-title">Preu per dia</h6>
+        <p class="card-text"><?= $app['Preu_Baixa'] . " / " . $app['Preu_Alta']; ?></p>
+        <h6 class="card-title">Adreça</h6>
+        <p class="card-text"><?= $app['Adreca_Postal']; ?></p>
+        <h6 class="card-title">Numero d'habitacions</h6>
+        <p class="card-text"><?= $app['N_Habitacions']; ?></p>
+        <button type="button" class="btn btn-primary openModal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-apartament-id="<?= $app['ID']; ?>">
+          Mes informació
+        </button>
+            
+          </div>
+        </div>
+      <?php endforeach; ?>
     </div>
+  <?php else: ?>
+    <p>No hi ha apartaments disponibles amb les dades proporcionades.</p>
+  <?php endif; ?>
 </div>
+
+
+
+
 
 
 <!-- Modal -->
@@ -105,19 +139,9 @@
   </div>
 </div>
     <script src="script/script.js"></script>
+    <script src="script/script.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
-    <script>
-        var mapGlobal = L.map('mapGlobal').setView([<?= $apps[0]['Latitud']; ?>, <?= $apps[0]['Longitud']; ?>], 15);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(mapGlobal);
-
-        <?php foreach ($apps as $app): ?>
-            L.marker([<?= $app['Latitud']; ?>, <?= $app['Longitud']; ?>]).addTo(mapGlobal);
-        <?php endforeach; ?>
-    </script>
 </body>
 </html>

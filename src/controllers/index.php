@@ -17,6 +17,8 @@ function ctrlIndex($request, $response, $container) {
 
     $response->set("tasks", $tasks);
     $response->set("rooms", $rooms);
+
+    
     $response->setTemplate("index.php");
     
 

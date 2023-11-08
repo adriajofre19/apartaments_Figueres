@@ -10,9 +10,13 @@
         <?php include 'header.php' ?>
     </header>
 
-    <div class="container">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+      <div class="shadow-form text-center form-dades">
 <form action="index.php" method="post">
 <input type="hidden" name="r" value="doupdateuser">
+<div class="mb-3">
+  <h2>Les meves dades</h2>
+</div>
 <div class="mb-3">
   <label class="form-label">Nom</label>
   <input name="nom" type="text" class="form-control" value="<?php echo $tasks['nom'] ?>">
@@ -48,16 +52,13 @@
 <button type="submit" class="btn btn-primary">Actualitzar dades</button>
 </form>
 </div>
+</div>
 
 
     <footer>
         <?php include 'footer.php' ?>
     </footer>
 </body>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
 </html>
 
 

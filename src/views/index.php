@@ -32,26 +32,35 @@
         </button>
     </div>
 
-<div class="apartments">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <?php foreach ($apps as $app): ?>
-                <div class="col">
-                    <div class="card cardIndex h-100">
-                        <img src="images/habitacio<?= $app['ID']; ?>.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#hotelModal<?= $app['ID']; ?>">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $app['Titol']; ?></h5>
-                            <h6 class="card-title">Preu per nit</h6>
-                            <p class="card-text"> <?= $app['Preu_Baixa'] . " / " . $app['Preu_Alta'];?></p>
-                            <h6 class="card-title">Adreça</h6>
-                            <p class="card-text"><?= $app['Adreca_Postal']; ?></p>
-                            <h6 class="card-title">Numero d'habitacions</h6>
-                            <p class="card-text"> <?= $app['N_Habitacions']; ?></p>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
+<div class="container">
+    <a class="none" href="index.php?r=rooms">
+  <div class="d-flex flex-wrap justify-content-between">
+    <?php
+    $contador = 0; // Inicializamos un contador
+    foreach ($apps as $app):
+      if ($contador < 8): // Verificamos si el contador es menor que 8
+    ?>
+    <div class="card" style="width: 18rem;">
+      <img src="images/habitacio<?= $app['ID']; ?>.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><?= $app['Titol']; ?></h5>
+        <h6 class="card-title">Preu per dia</h6>
+        <p class="card-text"><?= $app['Preu_Baixa'] . " / " . $app['Preu_Alta']; ?></p>
+        <h6 class="card-title">Adreça</h6>
+        <p class="card-text"><?= $app['Adreca_Postal']; ?></p>
+        <h6 class="card-title">Numero d'habitacions</h6>
+        <p class="card-text"><?= $app['N_Habitacions']; ?></p>
+      </div>
     </div>
+    <?php
+        $contador++; 
+      endif;
+    endforeach;
+    ?>
+  </div>
+  </a>
+</div>
+
 
 <footer>
 <?php include 'footer.php' ?>

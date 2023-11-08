@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="shadow-form">
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+      <div class="shadow-form text-center form-dades">
+  <a href="index.php?r=index"><img href="index.php?r=index" src="images/logo.png" alt="" style="width: 10%;"></a>
   <h1 class="account">Crea un compte</h1>
   <form class="form-registrar" action="index.php" method="post">
     <input type="hidden" name="r" value="doregister">
@@ -45,7 +47,9 @@
       <label for="exampleInputPassword1" class="form-label">Contrasenya</label>
       <input name="pass" type="text" class="form-control" id="input">
     </div>
-    <button type="submit" class="btn btn-primary2">Enviar</button>
+    <button type="submit" class="btn btn-primary">Enviar</button>
   </form>
+  <a href="index.php?r=login" class="return">Ja tens usuari, inicia sessió aqui</a>
+</div>
 </div>
 </body>

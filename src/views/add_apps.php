@@ -9,7 +9,9 @@
     <header>
         <?php include 'header.php' ?>
     </header>
-    <div class="container">
+<div class="container d-flex justify-content-center align-items-center vh-100">
+<div class="shadow-form text-center form-dades">
+  <h2>Afegir un apartament</h2>
 <form action="index.php" method="post">
 <input type="hidden" name="r" value="do_add">
 <div class="mb-3">
@@ -54,6 +56,7 @@
 </div>
 <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
+</div>
 </div>
     <footer>
 <?php include 'footer.php' ?>
