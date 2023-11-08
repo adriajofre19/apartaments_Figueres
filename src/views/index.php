@@ -31,10 +31,9 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
-<div class="apartments">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <?php foreach ($apps as $app): ?>
+    <div class="container text-center">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+  <?php foreach ($apps as $app): ?>
                 <div class="col">
                     <div class="card cardIndex h-100">
                         <img src="images/habitacio<?= $app['ID']; ?>.jpg" class="card-img-top" alt="..." data-bs-toggle="modal" data-bs-target="#hotelModal<?= $app['ID']; ?>">
@@ -50,8 +49,8 @@
                     </div>
                 </div>
             <?php endforeach; ?>
-        </div>
-    </div>
+  </div>
+</div>
 
 <footer>
 <?php include 'footer.php' ?>

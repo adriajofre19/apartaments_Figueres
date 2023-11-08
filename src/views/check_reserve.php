@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <h6>Nom d'usuari</h6>
                         <p class="card-text"><?php echo $reserva['user_nombre']; ?></p>
-                        <h6>Nom de l'apartaments</h6>
+                        <h6>Nom de l'apartament</h6>
                         <p class="card-text"><?php echo $reserva['apartamento_titulo']; ?></p>
                         <h6>Data_Entrada</h6>
                         <p class="card-text"><?php echo $reserva['Data_Entrada']; ?></p>
@@ -29,7 +29,7 @@
                         <p class="card-text"><?php echo $reserva['Data_Sortida']; ?></p>
                         <h6>Preu_Total</h6>
                         <p class="card-text"><?php echo $reserva['Preu_Per_Dia']; ?></p>
-                        <h6>Nokbre habitacions</h6>
+                        <h6>Nombre d'habitacions</h6>
                         <p class="card-text"><?php echo $reserva['n_habitacions']; ?></p>
                         <button class="btn btn-success" onclick="PDF(<?php echo $index; ?>)">Descargar PDF</button>
                     </div>
@@ -47,7 +47,7 @@
         doc.text('DADES DE LA RESERVA', 100, 40, { align: 'center' });
 
         var marge = 50;
-        var reserva = <?php echo json_encode($reserves); ?>; // Obtener todas las reservas
+        var reserva = <?php echo json_encode($reserves); ?>; 
 
         doc.setFontSize(16);
 
