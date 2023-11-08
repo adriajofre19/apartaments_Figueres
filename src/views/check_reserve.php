@@ -14,7 +14,7 @@
     </header>
     
     <div class="container">
-        <?php foreach ($reserves as $reserva): ?>
+    <?php foreach ($reserves as $index => $reserva): ?>
             <div class="card">
   <h6 class="card-header"><?php echo $reserva['user_nombre']; ?></h6>
   <div class="card-body">
