@@ -108,4 +108,6 @@ $(document).ready(function() {
 new DataTable('#users');
 new DataTable('#apartaments');
 new DataTable('#reserves');
-
+  
+  
+  

@@ -1,17 +1,19 @@
 <div class="footer-container">
             <div class="footer-logo">
-                <img src="logo.png" alt="Logo de la empresa">
+            <a class="navbar-brand" href="index.php?r=index">
+                        <img src="images/logo.png" alt="Bootstrap" width="50" height="50">
+                    </a>
             </div>
             <div class="footer-links">
                 <ul>
-                    <li><a href="index.php?r=index">Inicio</a></li>
-                    <li><a href="#">Acerca de Nosotros</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="index.php?r=index">Inici</a></li>
+                    <li><a href="index.php?r=rooms">Habitacions disponibles</a></li>
+                    <li><a href="index.php?r=check_reserve">Consultar reserves</a></li>
+                    <li><a href="index.php?r=dades">Les meves dades</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
-                <p>Contacto: info@tudominio.com</p>
-                <p>Teléfono: (123) 456-7890</p>
+                <p>Contacte: info@apartamentsfiguerencs.com</p>
+                <p>Telèfon:972456321 </p>
             </div>
         </div>

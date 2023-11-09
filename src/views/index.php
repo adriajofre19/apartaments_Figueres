@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,10 +61,11 @@
   </div>
   </a>
 </div>
-
-
+  
+  <script src="script/script.js"></script>
 <footer>
 <?php include 'footer.php' ?>
 </footer>
+
 </body>
 </html>

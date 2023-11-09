@@ -61,9 +61,14 @@
         doc.text("Data de sortida: " + reserva[index].Data_Sortida, 20, y);
         y += 10;
         doc.text('Nombre de persones: ' + reserva[index].n_persones, 20, y);
+        var logoPath = 'images/logo.png'; // Ajusta la ruta según la estructura de tu proyecto
+        doc.addImage(logoPath, 'PNG', 10, 10, 15, 15);
+        var logoPath = 'images/qr.png'; // Ajusta la ruta según la estructura de tu proyecto
+        doc.addImage(logoPath, 'PNG', 10, 120, 15, 15);
 
         doc.save('Info_reserva_' + (index + 1) + '.pdf');
     }
+    
 </script>
 
 

@@ -30,6 +30,7 @@
   <a href="index.php?r=register" class="return ">No tens usuari, registra't aqui</a>
 </div>
 </div>
+
 </body>
 </html>
 
