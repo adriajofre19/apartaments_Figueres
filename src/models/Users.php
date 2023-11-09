@@ -61,8 +61,8 @@ class Users {
     ]);
 }
 
-    public function editRoom($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats, $adreca_postal) {
-    $stm = $this->sql->prepare("UPDATE apartamentos SET titol = :titol, preu_alta = :preu_alta, preu_baixa = :preu_baixa, temporades = :temporades, longitud = :longitud, latitud = :latitud, n_habitacions = :n_habitacions, metres_quadrats = :metres_quadrats, adreca_postal = :adreca_postal WHERE titol = :titol");
+    public function editRoom($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats, $descripcio, $adreca_postal, $serveis) {
+    $stm = $this->sql->prepare("UPDATE apartamentos SET titol = :titol, preu_alta = :preu_alta, preu_baixa = :preu_baixa, temporades = :temporades, longitud = :longitud, latitud = :latitud, n_habitacions = :n_habitacions, metres_quadrats = :metres_quadrats, descripcio = :descripcio ,adreca_postal = :adreca_postal, serveis = :serveis WHERE titol = :titol");
 
     $stm->execute([
         ':titol' => $titol,
@@ -73,7 +73,9 @@ class Users {
         ':latitud' => $latitud,
         ':n_habitacions' => $n_habitacions,
         ':metres_quadrats' => $metres_quadrats,
-        ':adreca_postal' => $adreca_postal
+        ':descripcio' => $descripcio,
+        ':adreca_postal' => $adreca_postal,
+        ':serveis' => $serveis
     
     ]);
 }
@@ -101,9 +103,9 @@ class Users {
         return $apps; 
     }
 
-    public function AddApps($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats,$descripcio,$adreca_postal){
-        $stm = $this->sql->prepare('insert into apartamentos (titol, preu_alta, preu_baixa, temporades, longitud, latitud, n_habitacions, metres_quadrats, descripcio, adreca_postal) values (:titol, :preu_alta, :preu_baixa, :temporades, :longitud, :latitud, :n_habitacions, :metres_quadrats, :descripcio, :adreca_postal);');
-        $result = $stm->execute([':titol'=>$titol, ':preu_alta'=>$preu_alta, ':preu_baixa'=>$preu_baixa, ':temporades'=>$temporades, ':longitud'=>$longitud, ':latitud'=>$latitud, ':n_habitacions'=>$n_habitacions, ':metres_quadrats'=>$metres_quadrats, ':descripcio'=>$descripcio, ':adreca_postal'=>$adreca_postal ]);
+    public function AddApps($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats,$descripcio,$adreca_postal, $serveis){
+        $stm = $this->sql->prepare('insert into apartamentos (titol, preu_alta, preu_baixa, temporades, longitud, latitud, n_habitacions, metres_quadrats, descripcio, adreca_postal, serveis) values (:titol, :preu_alta, :preu_baixa, :temporades, :longitud, :latitud, :n_habitacions, :metres_quadrats, :descripcio, :adreca_postal, :serveis);');
+        $result = $stm->execute([':titol'=>$titol, ':preu_alta'=>$preu_alta, ':preu_baixa'=>$preu_baixa, ':temporades'=>$temporades, ':longitud'=>$longitud, ':latitud'=>$latitud, ':n_habitacions'=>$n_habitacions, ':metres_quadrats'=>$metres_quadrats, ':descripcio'=>$descripcio, ':adreca_postal'=>$adreca_postal, ':serveis'=>$serveis ]);
     }
 
     public function deleteRoom($id){

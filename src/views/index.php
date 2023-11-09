@@ -32,16 +32,16 @@
         </button>
     </div>
 
-<div class="container">
+<div class="container container-m10">
     <a class="none" href="index.php?r=rooms">
-  <div class="d-flex flex-wrap justify-content-between">
+  <div class="d-flex flex-wrap justify-content-center">
     <?php
     $contador = 0; // Inicializamos un contador
     foreach ($apps as $app):
-      if ($contador < 8): // Verificamos si el contador es menor que 8
+      if ($contador < 8): // Verificamos si el contador es menor que 6
     ?>
-    <div class="card" style="width: 18rem;">
-      <img src="images/habitacio<?= $app['ID']; ?>.jpg" class="card-img-top" alt="...">
+    <div class="card card-margin" style="width: 18rem;">
+      <img src="images/<?= $app['Titol']; ?>.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"><?= $app['Titol']; ?></h5>
         <h6 class="card-title">Preu per dia</h6>

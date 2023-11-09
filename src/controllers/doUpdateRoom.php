@@ -15,12 +15,16 @@ function ctrlDoUpdateRoom($request, $response, $container){
     $metres_quadrats = $request->get(INPUT_POST, "metres_quadrats");
     $descripcio = $request->get(INPUT_POST, "descripcio");
     $adreca_postal = $request->get(INPUT_POST, "adreca_postal");
+    $serveis = $request->get(INPUT_POST, "serveis");
 
     
-    $taskModel->editRoom($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats, $adreca_postal);
+    $taskModel->editRoom($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats, $descripcio, $adreca_postal,$serveis);
 
+    if ($adminUser = true){
+        $response->redirect("location: index.php?r=adminpanel");
+    } else {
+        $response->redirect("location: index.php?r=rooms");
+    }
     
-
-    $response->redirect("location: index.php?r=adminpanel");
     return $response;
 }
