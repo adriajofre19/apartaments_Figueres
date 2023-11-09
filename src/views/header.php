@@ -19,19 +19,33 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?r=check_reserve">Consultar reserves</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?r=add_apps">Afegir un apartament</a>
+                <li>
+                    <a class="nav-link" href="index.php?r=dades">Les meves dades</a>
                 </li>
                 
             
             <?php $user = $_SESSION['user'];    
             if ($user['rol'] == "admin"){ ?>
+            <li>
+                    <a class="nav-link" href="index.php?r=tancaments">Periodes tancats</a>
+                    </li>
                 <li>
                     <a class="nav-link" href="index.php?r=adminpanel">AdminPanel</a>
                 </li>
-            <?php } else { ?>
-        
-            <?php } ?>
+                <li>
+                    <a class="nav-link" href="index.php?r=gestorpanel">GestorPanel</a>
+                </li>
+            <?php } elseif ($user['rol'] == "gestor") { ?>
+                    <li>
+                    <a class="nav-link" href="index.php?r=add_apps">Afegir un apartament</a>
+                    </li>
+                    <li>
+                    <a class="nav-link" href="index.php?r=tancaments">Periodes tancats</a>
+                    </li>
+                        <li>
+                        <a class="nav-link" href="index.php?r=gestorpanel">GestorPanel</a>
+                        </li>
+            <?php } else {} ?>
     
             </ul>
         </div>
@@ -43,7 +57,6 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-dark">
                     <li><a class="dropdown-item"><?php echo $_SESSION['user']['user']; ?></a></li>
-                    <li><a class="dropdown-item" href="index.php?r=dades">Les meves dades</a></li>
                     <li><a class="dropdown-item" href="index.php?r=dologout">Tancar sessió</a></li>
                 </ul>
             </div>

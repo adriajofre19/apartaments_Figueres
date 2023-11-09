@@ -26,6 +26,8 @@ include "../src/controllers/doUpdateRoom.php";
 include "../src/controllers/addReserve.php";
 include "../src/controllers/openModal.php";
 include "../src/controllers/deleteReserve.php";
+include "../src/controllers/gestorpanel.php";
+include "../src/controllers/tancaments.php";
 
  $request = new \Emeset\Request();
  $response = new \Emeset\Response();
@@ -88,10 +90,10 @@ elseif($r == "rooms") {
   $response->response();
 
 } elseif($r == "add_apps") {
-  $response = isLogged($request, $response, $container,"CtrlAdd_apps");
+  $response = isGestor($request, $response, $container,"CtrlAddApps");
   $response->response();
 
-} elseif($r == "do_add") {
+}elseif($r == "do_add") {
   $response = ctrlDoAdd($request, $response, $container);
   $response->response();
 
@@ -127,6 +129,15 @@ elseif($r == "rooms") {
  elseif($r == "deletereserve") {
   $response = ctrlDeleteReserve($request, $response, $container);
   $response->response();
+
+} elseif($r == "tancaments") {
+  $response = ctrlTancaments($request, $response, $container);
+  $response->response();
+}
+elseif($r == "gestorpanel") {
+  $response = isGestor($request, $response, $container, "ctrlGestorPanel");
+    $response->response();
+
 }
  else {
      $response = ctrlLogin($request, $response, $container);

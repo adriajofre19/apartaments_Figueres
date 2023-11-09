@@ -1,8 +1,8 @@
 <?php
 
-function CtrlRooms($request, $response, $container) {
+function ctrlTancaments($request, $response, $container) {
 
-    $response->setTemplate("rooms.php");
+    $response->setTemplate("tancaments.php");
 
     $taskModel = $container->users();
 
@@ -16,6 +16,7 @@ function CtrlRooms($request, $response, $container) {
 
     $response->set("apps", $apps);
 
+    
     
     return $response;
 }

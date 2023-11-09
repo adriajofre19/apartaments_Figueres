@@ -32,6 +32,7 @@ $(document).ready(function() {
 
                     console.log(apartment);
 
+
                     jQuery("#Titol").html(apartment.Titol);
                     jQuery("#ID").html(apartment.ID);
                     jQuery("#Descripcio").html(apartment.Descripcio);
@@ -42,9 +43,10 @@ $(document).ready(function() {
                     jQuery("#Preu_Baixa").html(apartment.Preu_Baixa);
                     jQuery("#Temporades").html(apartment.Temporades);
                     jQuery("#persones").val(apartment.N_Habitacions);
+                    jQuery("#Serveis").html(apartment.Serveis);
 
                     var image = $("#apartmentImage");
-                    image.attr("src", "images/habitacio" + apartment.ID + ".jpg");
+                    image.attr("src", "images/" + apartment.Titol + ".jpg");
 
                     $("input[name='ID_Apartament']").val(apartamentId);
                     
@@ -101,14 +103,9 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function() {
-            $('#users').DataTable();
-        });
 
-$(document).ready(function() {
-            $('#apartaments').DataTable();
-        });
 
-$(document).ready(function() {
-            $('#reserves').DataTable();
-        });
+new DataTable('#users');
+new DataTable('#apartaments');
+new DataTable('#reserves');
+

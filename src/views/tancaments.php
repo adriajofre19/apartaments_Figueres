@@ -41,8 +41,8 @@
         </div>
         <div class="col-md-4">
           <div class="mb-3">
-            <label for="numPersonas" class="form-label">Número d'habitacions</label>
-            <input name="n_persones" type="number" class="form-control" id="numPersonas">
+            
+            <input name="n_persones" type="hidden" class="form-control" id="numPersonas">
           </div>
           
         </div>
@@ -70,7 +70,7 @@
         <h6 class="card-title">Numero d'habitacions</h6>
         <p class="card-text"><?= $app['N_Habitacions']; ?></p>
         <button type="button" class="btn btn-primary openModal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-apartament-id="<?= $app['ID']; ?>">
-          Mes informació
+          Tancar
         </button>
             
           </div>
@@ -141,7 +141,7 @@
       <input name="Data_Sortida" type="date" class="form-control form-reserve" id="Data_Sortida">
       <input name="Preu_Per_Dia" type="hidden" class="form-control form-reserve" id="Precio_Reserva">
       <input name="n_persones" type="hidden" class="form-control form-reserve" id="persones">
-      <button type="submit" class="btn btn-primary">Reservar</button>
+      <button type="submit" class="btn btn-danger">Tancar</button>
     </div>
   </form>
     </div>

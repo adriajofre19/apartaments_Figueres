@@ -19,6 +19,7 @@ function ctrlAddReserve($request, $response, $container){
         $response->redirect("location: index.php?r=adminpanel");
     } else {
         $response->redirect("location: index.php?r=do_reserve");
+
     }
     
     return $response;

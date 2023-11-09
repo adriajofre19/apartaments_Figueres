@@ -76,6 +76,7 @@ footer {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
+    margin: 10px;
 }
 
 .dades{
@@ -87,8 +88,9 @@ footer {
 
 #apartmentImage {
     object-fit: cover;
-    border-radius: 40px;
-    margin-bottom: 40px;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
 }
 .modal {
     --bs-modal-width: 1000px;
@@ -123,3 +125,13 @@ footer {
 .none{
     text-decoration: none;
 }
+.card-margin{
+    margin: 10px;
+    }
+
+.buscador{
+        margin-bottom: 40px;
+    }
+.container-m10{
+        margin-top: 30px;
+    }

@@ -41,30 +41,21 @@
                 <th>Cognoms</th>
                 <th>Telèfon</th>
                 <th>Email</th>
-                <th>Targeta de crèdit</th>
                 <th>Usuari</th>
-                <th>Contrasenya</th>
                 <th>Rol</th>
-                <th>Editar/Eliminar</th>
                 
             </tr>
         </thead>
         <tbody>
             <?php foreach ($apps as $app): ?>
             <tr>
-                <form action="index.php" method="post">
-                <input type="hidden" name="r" value="doupdateuser">
-                        <td><input name="nom" type="text" class="form-control panel" value="<?php echo $app['Nom'] ?>"></td>
-                        <td><input name="cognoms" type="text" class="form-control panel" value="<?php echo $app['Cognoms'] ?>"></td>
-                        <td><input name="telefon" type="text" class="form-control panel" value="<?php echo $app['Telefon'] ?>"></td>
-                        <td><input name="email" type="text" class="form-control panel" value="<?php echo $app['Email'] ?>"></td>
-                        <td><input name="card" type="text" class="form-control panel" value="<?php echo $app['Card'] ?>"></td>
-                        <td><input name="user" type="text" class="form-control panel" value="<?php echo $app['user'] ?>"></td>
-                        <td><input name="pass" type="text" class="form-control panel" value="<?php echo $app['pass'] ?>"></td>
-                        <td><input name="rol" type="text" class="form-control panel" value="<?php echo $app['rol'] ?>"></td>
-                        <td><button type="submit" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></button>
-                        <a href="index.php?r=deleteuser&id=<?= $app['ID']; ?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a></td>
-                </form>
+                        <td><?php echo $app['Nom'] ?></td>
+                        <td><?php echo $app['Cognoms'] ?></td>
+                        <td><?php echo $app['Telefon'] ?></td>
+                        <td><?php echo $app['Email'] ?></td>
+                        <td><?php echo $app['user'] ?></td>
+                        <td><?php echo $app['rol'] ?></td>
+                        
             </tr>
             <?php endforeach; ?> 
         </tbody> 
@@ -206,8 +197,8 @@
                 <select name="rol" class="form-control panel" id="rol" required>
                     <option value="usuari">Rol: Usuari</option>
                     <option value="gestor">Rol: Gestor</option>
-                    <option value="admin">Rol: Admin</option>
                 </select>
+
                 <button type="submit" class="btn btn-primary">Afegir</button>
                 
             </form>
@@ -228,6 +219,8 @@
       <div class="modal-body">
         <form action="index.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="r" value="do_add">
+            
+              
                 <input name="titol" type="text" class="form-control panel" placeholder="Títol">
                 <input name="preu_alta" type="text" class="form-control panel" placeholder="Preu temporada alta">
                 <input name="preu_baixa" type="text" class="form-control panel" placeholder="Preu temporada baixa">
@@ -241,12 +234,13 @@
                 <input name="serveis" type="text" class="form-control panel" placeholder="Serveis">
                 <input type="file" name="foto" id="foto" accept="image/jpeg">
                 <button type="submit" class="btn btn-primary">Afegir</button>
+                
+            
             </form>
       </div>
     </div>
   </div>
 </div>
-
 
 
 
