@@ -60,6 +60,20 @@ class Users {
         ':rol' => $rol
     ]);
 }
+public function editUser_User($nom, $cognoms, $telefon, $email, $card, $user, $pass, $rol) {
+    $stm = $this->sql->prepare("UPDATE users SET nom = :nom, cognoms = :cognoms, telefon = :telefon, email = :email, card = :card, user = :user, pass = :pass, rol = :rol WHERE nom = :nom");
+    
+    $stm->execute([
+        ':nom' => $nom,
+        ':cognoms' => $cognoms,
+        ':telefon' => $telefon,
+        ':email' => $email,
+        ':card' => $card,
+        ':user' => $user,
+        ':pass' => $pass,
+        ':rol' => $rol
+    ]);
+}
 
     public function editRoom($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats, $descripcio, $adreca_postal, $serveis) {
     $stm = $this->sql->prepare("UPDATE apartamentos SET titol = :titol, preu_alta = :preu_alta, preu_baixa = :preu_baixa, temporades = :temporades, longitud = :longitud, latitud = :latitud, n_habitacions = :n_habitacions, metres_quadrats = :metres_quadrats, descripcio = :descripcio ,adreca_postal = :adreca_postal, serveis = :serveis WHERE titol = :titol");

@@ -13,7 +13,7 @@
     <div class="container d-flex justify-content-center align-items-center">
       <div class="shadow-form text-center form-dades">
 <form action="index.php" method="post">
-<input type="hidden" name="r" value="doupdateuser">
+<input type="hidden" name="r" value="doupdateuser2">
 <div class="mb-3">
   <h1 class="account">Les meves dades</h1>
 </div>
