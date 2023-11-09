@@ -43,9 +43,7 @@
 </div>
 
 
-        <script>
-    window.jsPDF = window.jspdf.jsPDF;
-
+<script>
     function PDF(index) {
         var doc = new jsPDF();
 
@@ -79,8 +77,8 @@
         doc.text('Nombre de persones: ' + reserva[index].n_persones, 20, y);
         var logoPath = 'images/logo.png'; 
         doc.addImage(logoPath, 'PNG', 10, 10, 15, 15);
-        var logoPath = 'images/qr.png'; /
-        doc.addImage(logoPath, 'PNG', 10, 120, 15, 15);
+        var qrPath = 'images/qr.png'; // Fixed the syntax error here
+        doc.addImage(qrPath, 'PNG', 10, 120, 15, 15);
 
         doc.save('Info_reserva_' + (index + 1) + '.pdf');
     }
@@ -90,13 +88,13 @@
         var month = date.getMonth() + 1;
         var year = date.getFullYear();
 
-
         day = day < 10 ? '0' + day : day;
         month = month < 10 ? '0' + month : month;
 
         return day + '/' + month + '/' + year;
     }
 </script>
+
 
 
 
