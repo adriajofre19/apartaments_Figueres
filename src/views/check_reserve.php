@@ -13,17 +13,14 @@
         <?php include 'header.php' ?>
     </header>
     
-    <div class="container d-flex flex-wrap">
+    <div class="container d-flex flex-wrap justify-content-center">
     <?php foreach ($reserves as $index => $reserva): ?>
         <div class="card mb-3 mx-2" style="max-width: 18rem;">
-        <?php 
-                            $yesterday = date('Y-m-d', strtotime('-1 day'));
-                            if($reserva['Data_Entrada']< $yesterday){
-                                echo ('<h6 class="card-header text-danger">Reserva vençuda</h6>');
-                            } else{
-                                echo ('<h6 class="card-header text-primary">Reserva vigent</h6>');
-                            }
-                        ?>
+            <?php 
+                $yesterday = date('Y-m-d', strtotime('-1 day'));
+                $statusClass = ($reserva['Data_Entrada'] < $yesterday) ? 'text-danger' : 'text-primary';
+                echo '<h6 class="card-header ' . $statusClass . '">Reserva ' . (($reserva['Data_Entrada'] < $yesterday) ? 'vençuda' : 'vigent') . '</h6>';
+            ?>
             <div class="card-body">
                 <h6>Apartament</h6>
                 <p class="card-text"><?php echo $reserva['apartamento_titulo']; ?></p>
@@ -42,61 +39,46 @@
     <?php endforeach; ?>
 </div>
 
+        <script>
+    window.jsPDF = window.jspdf.jsPDF;
 
-<script>
     function PDF(index) {
-        var doc = new jsPDF();
+    var doc = new jsPDF();
 
-        doc.setFont('helvetica', 'bold');
-        doc.setFontSize(25);
+    // Establecer el estilo de la fuente en negrita
+    doc.setFont('helvetica', 'bold');
+    
+    doc.setFontSize(25);
+    doc.text('DADES DE LA RESERVA', 100, 40, { align: 'center' });
 
-        doc.text('DADES DE LA RESERVA', 100, 40, { align: 'center' });
+    // Restaurar el estilo de la fuente al valor original
+    doc.setFont('helvetica', 'normal');
 
-        var marge = 50;
-        var reserva = <?php echo json_encode($reserves); ?>; 
+    var marge = 50;
+    var reserva = <?php echo json_encode($reserves); ?>; 
 
-        doc.setFont('helvetica', 'normal');
-        doc.setFontSize(16);
+    doc.setFontSize(16);
 
-        var y = marge;
-        doc.text('RESERVA ' + (index + 1) + ':', 10, y);
-        y += 10;
-        doc.text("Nom d'usuari: " + reserva[index].user_nombre, 20, y);
-        y += 10;
-        doc.text("Nom de l'apartament: " + reserva[index].apartamento_titulo, 20, y);
-        y += 20;
-        
-        var fechaEntrada = new Date(reserva[index].Data_Entrada);
-        var fechaSalida = new Date(reserva[index].Data_Sortida);
+    var y = marge;
+    doc.text('RESERVA ' + (index + 1) + ':', 10, y);
+    y += 10;
+    doc.text("Nom d'usuari: " + reserva[index].user_nombre, 20, y);
+    y += 10;
+    doc.text("Nom de l'apartament: " + reserva[index].apartamento_titulo, 20, y);
+    y += 20;
+    doc.text("Data d'entrada: " + reserva[index].Data_Entrada, 20, y);
+    y += 10;
+    doc.text("Data de sortida: " + reserva[index].Data_Sortida, 20, y);
+    y += 10;
+    doc.text('Nombre de persones: ' + reserva[index].n_persones, 20, y);
+    var logoPath = 'images/logo.png'; 
+    doc.addImage(logoPath, 'PNG', 10, 10, 15, 15);
+    var qrPath = 'images/qr.png'; 
+    doc.addImage(qrPath, 'PNG', 10, 120, 15, 15);
 
-        doc.text("Data d'entrada: " + formatDate(fechaEntrada), 20, y);
-        y += 10;
-        doc.text("Data de sortida: " + formatDate(fechaSalida), 20, y);
-        y += 10;
-        
-        doc.text('Nombre de persones: ' + reserva[index].n_persones, 20, y);
-        var logoPath = 'images/logo.png'; 
-        doc.addImage(logoPath, 'PNG', 10, 10, 15, 15);
-        var qrPath = 'images/qr.png'; // Fixed the syntax error here
-        doc.addImage(qrPath, 'PNG', 10, 120, 15, 15);
-
-        doc.save('Info_reserva_' + (index + 1) + '.pdf');
-    }
-
-    function formatDate(date) {
-        var day = date.getDate();
-        var month = date.getMonth() + 1;
-        var year = date.getFullYear();
-
-        day = day < 10 ? '0' + day : day;
-        month = month < 10 ? '0' + month : month;
-
-        return day + '/' + month + '/' + year;
-    }
+    doc.save('Info_reserva_' + (index + 1) + '.pdf');
+}
 </script>
-
-
-
 
 
     <footer>
