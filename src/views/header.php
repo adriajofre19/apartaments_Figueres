@@ -10,7 +10,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="navbar-brand" href="index.php?r=index">
-                        <img src="images/logo2.png" alt="Bootstrap" width="30" height="30">
+                        <img src="images/logo.png" alt="Bootstrap" width="30" height="30">
                     </a>
                 </li>
                 <li class="nav-item">

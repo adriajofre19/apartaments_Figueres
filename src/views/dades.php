@@ -10,7 +10,7 @@
         <?php include 'header.php' ?>
     </header>
 
-    <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="container d-flex justify-content-center align-items-center">
       <div class="shadow-form text-center form-dades">
 <form action="index.php" method="post">
 <input type="hidden" name="r" value="doupdateuser">
