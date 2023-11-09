@@ -105,9 +105,23 @@ $(document).ready(function() {
 
 
 
-new DataTable('#users');
-new DataTable('#apartaments');
-new DataTable('#reserves');
+var table = new DataTable('#users', {
+    language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/ca.json',
+    },
+});
+
+var table2 = new DataTable('#apartaments', {
+    language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/ca.json',
+    },
+});
+
+var table3 = new DataTable('#reserves', {
+    language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/ca.json',
+    },
+});
   
   
   
