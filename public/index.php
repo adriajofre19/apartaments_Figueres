@@ -28,6 +28,7 @@ include "../src/controllers/openModal.php";
 include "../src/controllers/deleteReserve.php";
 include "../src/controllers/gestorpanel.php";
 include "../src/controllers/tancaments.php";
+include "../src/controllers/doUpdateUser2.php";
 
  $request = new \Emeset\Request();
  $response = new \Emeset\Response();
@@ -137,8 +138,11 @@ elseif($r == "rooms") {
 elseif($r == "gestorpanel") {
   $response = isGestor($request, $response, $container, "ctrlGestorPanel");
     $response->response();
-
-}
+}elseif($r == "doupdateuser2") {
+      $response = ctrlDoUpdateUser2($request, $response, $container);
+      $response->response();
+    
+    }
  else {
      $response = ctrlLogin($request, $response, $container);
        $response->response();
