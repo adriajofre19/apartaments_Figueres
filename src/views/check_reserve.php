@@ -16,9 +16,18 @@
     <div class="container">
     <?php foreach ($reserves as $index => $reserva): ?>
             <div class="card">
-  <h6 class="card-header"><?php echo $reserva['user_nombre']; ?></h6>
+  <?php 
+                            $yesterday = date('Y-m-d', strtotime('-1 day'));
+                            if($reserva['Data_Entrada']< $yesterday){
+                                echo ('<h6 class="card-header text-danger">Reserva vençuda</h6>');
+                            } else{
+                                echo ('<h6 class="card-header text-success">Reserva vigent</h6>');
+                            }
+                        ?>
   <div class="card-body">
+
     <h6>Apartament</h6>
+    
                         <p class="card-text"><?php echo $reserva['apartamento_titulo']; ?></p>
                         <h6>Data Entrada</h6>
                         <p class="card-text"><?php echo $reserva['Data_Entrada']; ?></p>
@@ -28,7 +37,9 @@
                         <p class="card-text"><?php echo $reserva['Preu_Per_Dia']; ?></p>
                         <h6>Num persones</h6>
                         <p class="card-text"><?php echo $reserva['n_persones']; ?></p>
-                        <button class="btn btn-success" onclick="PDF(<?php echo $index; ?>)">Descargar PDF</button>
+                        
+
+                        <button class="btn btn-secondary" onclick="PDF(<?php echo $index; ?>)">Descargar PDF</button>
                         <a href="index.php?r=deletereserve&id=<?= $reserva['ID']; ?>" class="btn btn-danger">Eliminar</a>
   </div>
   </div>

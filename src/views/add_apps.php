@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+        <?php include 'header.php' ?>
+    </header>
   <div class="container d-flex justify-content-center align-items-center vh-100">
       <div class="shadow-form text-center form-dades">
             <form action="index.php" method="post" enctype="multipart/form-data">
