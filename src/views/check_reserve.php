@@ -16,7 +16,14 @@
     <div class="container d-flex flex-wrap">
     <?php foreach ($reserves as $index => $reserva): ?>
         <div class="card mb-3 mx-2" style="max-width: 18rem;">
-            <h6 class="card-header"><?php echo $reserva['user_nombre']; ?></h6>
+        <?php 
+                            $yesterday = date('Y-m-d', strtotime('-1 day'));
+                            if($reserva['Data_Entrada']< $yesterday){
+                                echo ('<h6 class="card-header text-danger">Reserva vençuda</h6>');
+                            } else{
+                                echo ('<h6 class="card-header text-primary">Reserva vigent</h6>');
+                            }
+                        ?>
             <div class="card-body">
                 <h6>Apartament</h6>
                 <p class="card-text"><?php echo $reserva['apartamento_titulo']; ?></p>

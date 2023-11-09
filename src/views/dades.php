@@ -18,35 +18,35 @@
   <h1 class="account">Les meves dades</h1>
 </div>
 <div class="mb-3">
-  <label class="form-label">Nom</label>
+  <label class="form-label h6">Nom</label>
   <input name="nom" type="text" class="form-control" value="<?php echo $tasks['nom'] ?>">
 </div>
 <div class="mb-3">
-  <label class="form-label">Cognoms</label>
+  <label class="form-label h6">Cognoms</label>
   <input name="cognoms" type="text" class="form-control" value="<?php echo $tasks['cognoms'] ?>">
 </div>
 <div class="mb-3">
-  <label class="form-label">Telèfon</label>
+  <label class="form-label h6">Telèfon</label>
   <input name="telefon" type="text" class="form-control" value="<?php echo $tasks['telefon'] ?>">
 </div>
 <div class="mb-3">
-  <label class="form-label">Email</label>
+  <label class="form-label h6">Email</label>
   <input name="email" type="text" class="form-control" value="<?php echo $tasks['email'] ?>">
 </div>
 <div class="mb-3">
-  <label class="form-label">Targeta de credit</label>
+  <label class="form-label h6">Targeta de credit</label>
   <input name="card" type="text" class="form-control" value="<?php echo $tasks['card'] ?>">
 </div>
 <div class="mb-3">
-  <label class="form-label">Usuari</label>
+  <label class="form-label h6">Usuari</label>
   <input name="user" type="text" class="form-control" value="<?php echo $tasks['user'] ?>">
 </div>
 <div class="mb-3">
-  <label class="form-label">Contrasenya</label>
+  <label class="form-label h6">Contrasenya</label>
   <input name="pass" type="password" class="form-control" value="<?php echo $tasks['pass'] ?>">
 </div>
 <div class="mb-3">
-  <label class="form-label">Rol</label>
+  <label class="form-label h6">Rol</label>
   <input name="rol" type="text" class="form-control" value="<?php echo $tasks['rol'] ?>" disabled>
 </div>
 <button type="submit" class="btn btn-primary">Actualitzar dades</button>

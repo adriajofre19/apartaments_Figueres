@@ -6,7 +6,7 @@ function ctrlDeleteRoom($request, $response, $container){
     if (!empty($id)) {
         $taskModel->deleteRoom($id); // Cridar la funció de supressió amb la ID proporcionada
     }
-    if ($adminUser = true){
+    if ($adminUser = true ){
         $response->redirect("location: index.php?r=adminpanel");
     } else {
         $response->redirect("location: index.php?r=rooms");

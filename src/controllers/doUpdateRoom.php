@@ -20,7 +20,7 @@ function ctrlDoUpdateRoom($request, $response, $container){
     
     $taskModel->editRoom($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats, $descripcio, $adreca_postal,$serveis);
 
-    if ($adminUser = true){
+    if ($adminUser = true || $gestorUser === true){
         $response->redirect("location: index.php?r=adminpanel");
     } else {
         $response->redirect("location: index.php?r=rooms");
