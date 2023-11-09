@@ -101,26 +101,30 @@
       <img id="apartmentImage" src="images/" alt="">
       </center>
         <div class="col-md-6">
-            <div id="map" style="height: 350px;"></div>
+            <div id="map" style="height: 250px;"></div>
         </div>
         <div class="col-md-6">
-    <h6>Descripcio</h6>
-    <p id="Descripcio"></p>
-
-    <h6 class="d-inline">Numero d'habitacions</h6>
+    <h6 class="d-inline">Descripcio:</h6>
+    <p id="Descripcio" class="d-inline"></p><br>
+    <br>
+    <h6 class="d-inline">Numero d'habitacions:</h6>
     <p id="N_Habitacions" class="d-inline"></p><br>
+    <br>
 
-    <h6 class="d-inline">Metres Quadrats</h6>
+    <h6 class="d-inline">Metres Quadrats:</h6>
     <p id="Metres_Quadrats" class="d-inline"></p><br>
+    <br>
     
-    <h6>Adreça</h6>
-    <p id="Adreca_Postal"></p>
+    <h6 class="d-inline">Adreça:</h6>
+    <p id="Adreca_Postal" class="d-inline"></p><br>
+    <br>
 
-    <h6>Serveis</h6>
-    <p id="Serveis"></p>
+    <h6 class="d-inline">Serveis:</h6>
+    <p id="Serveis" class="d-inline"></p><br>
+    <br>
 
-    <h6>Preu per dia</h6>
-    <p id="Precio_Reserva"></p>
+    <h6 class="d-inline">Preu per dia:</h6>
+    <p id="Precio_Reserva" class="d-inline"></p><br>
 
 </div>
 

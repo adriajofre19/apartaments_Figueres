@@ -13,40 +13,44 @@
         <?php include 'header.php' ?>
     </header>
     
-    <div class="container">
+    <div class="container d-flex flex-wrap">
     <?php foreach ($reserves as $index => $reserva): ?>
-            <div class="card">
-  <h6 class="card-header"><?php echo $reserva['user_nombre']; ?></h6>
-  <div class="card-body">
-    <h6>Apartament</h6>
-                        <p class="card-text"><?php echo $reserva['apartamento_titulo']; ?></p>
-                        <h6>Data Entrada</h6>
-                        <p class="card-text"><?php echo $reserva['Data_Entrada']; ?></p>
-                        <h6>Data Sortida</h6>
-                        <p class="card-text"><?php echo $reserva['Data_Sortida']; ?></p>
-                        <h6>Preu per nit</h6>
-                        <p class="card-text"><?php echo $reserva['Preu_Per_Dia']; ?></p>
-                        <h6>Num persones</h6>
-                        <p class="card-text"><?php echo $reserva['n_persones']; ?></p>
-                        <button class="btn btn-primary" onclick="PDF(<?php echo $index; ?>)">Descargar PDF</button>
-                        <a href="index.php?r=deletereserve&id=<?= $reserva['ID']; ?>" class="btn btn-danger">Eliminar</a>
-  </div>
-  </div>
-        <?php endforeach; ?>
-    </div>
+        <div class="card mb-3 mx-2" style="max-width: 18rem;">
+            <h6 class="card-header"><?php echo $reserva['user_nombre']; ?></h6>
+            <div class="card-body">
+                <h6>Apartament</h6>
+                <p class="card-text"><?php echo $reserva['apartamento_titulo']; ?></p>
+                <h6>Data Entrada</h6>
+                <p class="card-text"><?php echo $reserva['Data_Entrada']; ?></p>
+                <h6>Data Sortida</h6>
+                <p class="card-text"><?php echo $reserva['Data_Sortida']; ?></p>
+                <h6>Preu per nit</h6>
+                <p class="card-text"><?php echo $reserva['Preu_Per_Dia']; ?></p>
+                <h6>Num persones</h6>
+                <p class="card-text"><?php echo $reserva['n_persones']; ?></p>
+                <button class="btn btn-primary" onclick="PDF(<?php echo $index; ?>)">Descargar PDF</button>
+                <a href="index.php?r=deletereserve&id=<?= $reserva['ID']; ?>" class="btn btn-danger">Eliminar</a>
+            </div>
         </div>
+    <?php endforeach; ?>
+</div>
+
+
         <script>
     window.jsPDF = window.jspdf.jsPDF;
 
     function PDF(index) {
         var doc = new jsPDF();
 
+        doc.setFont('helvetica', 'bold');
         doc.setFontSize(25);
+
         doc.text('DADES DE LA RESERVA', 100, 40, { align: 'center' });
 
         var marge = 50;
         var reserva = <?php echo json_encode($reserves); ?>; 
 
+        doc.setFont('helvetica', 'normal');
         doc.setFontSize(16);
 
         var y = marge;
@@ -56,20 +60,38 @@
         y += 10;
         doc.text("Nom de l'apartament: " + reserva[index].apartamento_titulo, 20, y);
         y += 20;
-        doc.text("Data d'entrada: " + reserva[index].Data_Entrada, 20, y);
+        
+        var fechaEntrada = new Date(reserva[index].Data_Entrada);
+        var fechaSalida = new Date(reserva[index].Data_Sortida);
+
+        doc.text("Data d'entrada: " + formatDate(fechaEntrada), 20, y);
         y += 10;
-        doc.text("Data de sortida: " + reserva[index].Data_Sortida, 20, y);
+        doc.text("Data de sortida: " + formatDate(fechaSalida), 20, y);
         y += 10;
+        
         doc.text('Nombre de persones: ' + reserva[index].n_persones, 20, y);
-        var logoPath = 'images/logo.png'; // Ajusta la ruta según la estructura de tu proyecto
+        var logoPath = 'images/logo.png'; 
         doc.addImage(logoPath, 'PNG', 10, 10, 15, 15);
-        var logoPath = 'images/qr.png'; // Ajusta la ruta según la estructura de tu proyecto
+        var logoPath = 'images/qr.png'; /
         doc.addImage(logoPath, 'PNG', 10, 120, 15, 15);
 
         doc.save('Info_reserva_' + (index + 1) + '.pdf');
     }
-    
+
+    function formatDate(date) {
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+
+
+        day = day < 10 ? '0' + day : day;
+        month = month < 10 ? '0' + month : month;
+
+        return day + '/' + month + '/' + year;
+    }
 </script>
+
+
 
 
     <footer>

@@ -15,7 +15,7 @@
 <form action="index.php" method="post">
 <input type="hidden" name="r" value="doupdateuser">
 <div class="mb-3">
-  <h2>Les meves dades</h2>
+  <h1 class="account">Les meves dades</h1>
 </div>
 <div class="mb-3">
   <label class="form-label">Nom</label>
