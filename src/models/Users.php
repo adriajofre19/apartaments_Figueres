@@ -107,7 +107,7 @@ public function editUser_User($nom, $cognoms, $telefon, $email, $card, $user, $p
     }
 
     public function getRooms(){
-        $stm = $this->sql->prepare("select * from APARTAMENTOS;");
+        $stm = $this->sql->prepare("select * from apartamentos;");
         $stm->execute();
         $apps = array();
 
