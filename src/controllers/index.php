@@ -7,7 +7,6 @@ function ctrlIndex($request, $response, $container) {
     
     $user = $request->get("SESSION", "user");
 
-    
     $tasks = $taskModel->getAll($user["id"]);
 
     $apps = $taskModel->getRooms();

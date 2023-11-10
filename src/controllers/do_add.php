@@ -6,17 +6,17 @@ function ctrlDoAdd($request, $response, $container){
 
     $taskModel = $container->users();
     
-    $titol = $request->get(INPUT_POST, "titol");
-    $preu_alta = $request->get(INPUT_POST, "preu_alta");
-    $preu_baixa= $request->get(INPUT_POST, "preu_baixa");
-    $temporades = $request->get(INPUT_POST, "temporades");
-    $longitud = $request->get(INPUT_POST, "longitud");
-    $latitud = $request->get(INPUT_POST, "latitud");
-    $n_habitacions = $request->get(INPUT_POST, "n_habitacions");
-    $metres_quadrats = $request->get(INPUT_POST, "metres_quadrats");
-    $descripcio = $request->get(INPUT_POST, "descripcio");
-    $adreca_postal = $request->get(INPUT_POST, "adreca_postal");
-    $serveis = $request->get(INPUT_POST, "serveis");
+    $titol = $request->get(INPUT_POST, "Titol");
+    $preu_alta = $request->get(INPUT_POST, "Preu_Alta");
+    $preu_baixa= $request->get(INPUT_POST, "Preu_Baixa");
+    $temporades = $request->get(INPUT_POST, "Temporades");
+    $longitud = $request->get(INPUT_POST, "Longitud");
+    $latitud = $request->get(INPUT_POST, "Latitud");
+    $n_habitacions = $request->get(INPUT_POST, "N_Habitacions");
+    $metres_quadrats = $request->get(INPUT_POST, "Metres_Quadrats");
+    $descripcio = $request->get(INPUT_POST, "Descripcio");
+    $adreca_postal = $request->get(INPUT_POST, "Adreca_Postal");
+    $serveis = $request->get(INPUT_POST, "Serveis");
     
     $taskModel->AddApps($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats,$descripcio,$adreca_postal,$serveis);
 
