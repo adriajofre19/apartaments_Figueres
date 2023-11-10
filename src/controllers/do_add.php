@@ -18,7 +18,7 @@ function ctrlDoAdd($request, $response, $container){
     $adreca_postal = $request->get(INPUT_POST, "Adreca_Postal");
     $serveis = $request->get(INPUT_POST, "Serveis");
     
-    $taskModel->AddApps($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats,$descripcio,$adreca_postal,$serveis);
+    $taskModel->AddApps($Titol,$Preu_Alta,$Preu_Baixa,$Temporades,$Longitud,$Latitud,$N_Habitacions,$Metres_Quadrats,$Descripcio,$Adreca_Postal, $Serveis);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $habitacio = $_POST["habitacio"];
