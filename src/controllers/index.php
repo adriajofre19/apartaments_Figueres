@@ -10,6 +10,8 @@ function ctrlIndex($request, $response, $container) {
 
     $apps = $taskModel->getRooms();
 
+    print_r($apps);
+
     $response->set("apps", $apps);
 
     $response->set("tasks", $tasks);
