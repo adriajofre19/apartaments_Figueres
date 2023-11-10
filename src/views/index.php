@@ -1,4 +1,4 @@
-<?php echo($apps); ?>
+<?php print_r($apps); ?>
 <!DOCTYPE html>
 <html>
 <head>
