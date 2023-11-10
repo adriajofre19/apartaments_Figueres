@@ -13,4 +13,4 @@ $config = [
 
 include "../src/models/Users.php";
 include "../src/models/Db.php";
-include "../src/models/session.php";
+include "../src/models/Session.php";
