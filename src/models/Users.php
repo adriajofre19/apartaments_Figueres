@@ -114,7 +114,8 @@ public function editUser_User($nom, $cognoms, $telefon, $email, $card, $user, $p
         while ($app = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $apps[] = $app;
         }
-        return $apps; 
+        return $apps;
+        print_r($apps);
     }
 
     public function AddApps($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats,$descripcio,$adreca_postal, $serveis){
