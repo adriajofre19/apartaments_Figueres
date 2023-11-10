@@ -118,9 +118,9 @@ public function editUser_User($nom, $cognoms, $telefon, $email, $card, $user, $p
         print_r($apps);
     }
 
-    public function AddApps($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats,$descripcio,$adreca_postal, $serveis){
+    public function AddApps($Titol,$Preu_Alta,$Preu_Baixa,$Temporades,$Longitud,$Latitud,$N_Habitacions,$Metres_Quadrats,$Descripcio,$Adreca_Postal, $Serveis){
         $stm = $this->sql->prepare('insert into apartamentos (Titol, Preu_Alta, Preu_Baixa, Temporades, Longitud, Latitud, N_Habitacions, Metres_Quadrats, Descripcio, Adreca_Postal, Serveis) values (:Titol, :Preu_Alta, :Preu_Baixa, :Temporades, :Longitud, :Latitud, :N_Habitacions, :Metres_Quadrats, :Descripcio, :Adreca_Postal, :Serveis);');
-        $result = $stm->execute([':Titol'=>$titol, ':Preu_Alta'=>$preu_alta, ':Preu_Baixa'=>$preu_baixa, ':Temporades'=>$temporades, ':Longitud'=>$longitud, ':Latitud'=>$latitud, ':N_Habitacions'=>$n_habitacions, ':Metres_Quadrats'=>$metres_quadrats, ':Descripcio'=>$descripcio, ':Adreca_Postal'=>$adreca_postal, ':Serveis'=>$serveis ]);
+        $result = $stm->execute([':Titol'=>$Titol, ':Preu_Alta'=>$Preu_Alta, ':Preu_Baixa'=>$Preu_Baixa, ':Temporades'=>$Temporades, ':Longitud'=>$Longitud, ':Latitud'=>$Latitud, ':N_Habitacions'=>$N_Habitacions, ':Metres_Quadrats'=>$Metres_Quadrats, ':Descripcio'=>$Descripcio, ':Adreca_Postal'=>$Adreca_Postal, ':Serveis'=>$Serveis ]);
     }
 
     public function deleteRoom($id){
