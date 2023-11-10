@@ -7,7 +7,7 @@ $config = [
         "user" => "root",
         "pass" => "1234",
         "db" => "apartaments",
-        "host" => "localhost"
+        "host" => "10.2.80.85"
     ],
 ];
 
