@@ -114,13 +114,12 @@ public function editUser_User($nom, $cognoms, $telefon, $email, $card, $user, $p
         while ($app = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $apps[] = $app;
         }
-        return $apps;
-        print_r($apps);
+        return $apps; 
     }
 
-    public function AddApps($Titol,$Preu_Alta,$Preu_Baixa,$Temporades,$Longitud,$Latitud,$N_Habitacions,$Metres_Quadrats,$Descripcio,$Adreca_Postal, $Serveis){
-        $stm = $this->sql->prepare('insert into apartamentos (Titol, Preu_Alta, Preu_Baixa, Temporades, Longitud, Latitud, N_Habitacions, Metres_Quadrats, Descripcio, Adreca_Postal, Serveis) values (:Titol, :Preu_Alta, :Preu_Baixa, :Temporades, :Longitud, :Latitud, :N_Habitacions, :Metres_Quadrats, :Descripcio, :Adreca_Postal, :Serveis);');
-        $result = $stm->execute([':Titol'=>$Titol, ':Preu_Alta'=>$Preu_Alta, ':Preu_Baixa'=>$Preu_Baixa, ':Temporades'=>$Temporades, ':Longitud'=>$Longitud, ':Latitud'=>$Latitud, ':N_Habitacions'=>$N_Habitacions, ':Metres_Quadrats'=>$Metres_Quadrats, ':Descripcio'=>$Descripcio, ':Adreca_Postal'=>$Adreca_Postal, ':Serveis'=>$Serveis ]);
+    public function AddApps($titol,$preu_alta,$preu_baixa,$temporades,$longitud,$latitud,$n_habitacions,$metres_quadrats,$descripcio,$adreca_postal, $serveis){
+        $stm = $this->sql->prepare('insert into apartamentos (titol, preu_alta, preu_baixa, temporades, longitud, latitud, n_habitacions, metres_quadrats, descripcio, adreca_postal, serveis) values (:titol, :preu_alta, :preu_baixa, :temporades, :longitud, :latitud, :n_habitacions, :metres_quadrats, :descripcio, :adreca_postal, :serveis);');
+        $result = $stm->execute([':titol'=>$titol, ':preu_alta'=>$preu_alta, ':preu_baixa'=>$preu_baixa, ':temporades'=>$temporades, ':longitud'=>$longitud, ':latitud'=>$latitud, ':n_habitacions'=>$n_habitacions, ':metres_quadrats'=>$metres_quadrats, ':descripcio'=>$descripcio, ':adreca_postal'=>$adreca_postal, ':serveis'=>$serveis ]);
     }
 
     public function deleteRoom($id){

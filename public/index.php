@@ -40,7 +40,7 @@ $r = '';
  }
 
 if($r == "") {
-    $response = ctrlIndex($request, $response, $container);
+    $response = CtrlIndex($request, $response, $container);
   $response->response();
 
   } elseif($r == "login") {
@@ -48,7 +48,7 @@ if($r == "") {
   $response->response();
 
 } elseif($r == "index") {
-  $response = ctrlIndex($request, $response, $container);
+  $response = CtrlIndex($request, $response, $container);
   $response->response();
 
 } elseif($r == "dologin") {
