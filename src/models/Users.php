@@ -114,7 +114,6 @@ public function editUser_User($nom, $cognoms, $telefon, $email, $card, $user, $p
         while ($app = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $apps[] = $app;
         }
-        print_r($apps);
         return $apps; 
     }
 
