@@ -7,6 +7,7 @@ function ctrlDades($request, $response, $container) {
     $taskModel = $container->users();
     
     $user = $request->get("SESSION", "user");
+
     
     $tasks = $taskModel->getUserData($user["ID"]);
     

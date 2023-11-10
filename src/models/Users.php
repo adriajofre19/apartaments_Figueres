@@ -60,8 +60,8 @@ class Users {
         ':rol' => $rol
     ]);
 }
-public function editUser_User($nom, $cognoms, $telefon, $email, $card, $user, $pass, $rol) {
-    $stm = $this->sql->prepare("UPDATE users SET nom = :nom, cognoms = :cognoms, telefon = :telefon, email = :email, card = :card, user = :user, pass = :pass, rol = :rol WHERE nom = :nom");
+public function editUser_User($nom, $cognoms, $telefon, $email, $card, $user, $pass) {
+    $stm = $this->sql->prepare("UPDATE users SET nom = :nom, cognoms = :cognoms, telefon = :telefon, email = :email, card = :card, user = :user, pass = :pass WHERE nom = :nom");
     
     $stm->execute([
         ':nom' => $nom,
@@ -71,7 +71,6 @@ public function editUser_User($nom, $cognoms, $telefon, $email, $card, $user, $p
         ':card' => $card,
         ':user' => $user,
         ':pass' => $pass,
-        ':rol' => $rol
     ]);
 }
 

@@ -12,10 +12,9 @@ function ctrlDoUpdateUser2($request, $response, $container){
     $card = $request->get(INPUT_POST, "card");
     $user = $request->get(INPUT_POST, "user");
     $pass = $request->get(INPUT_POST, "pass");
-    $rol = $request->get(INPUT_POST, "rol");
 
 
-    $taskModel->editUser_User($nom,$cognoms,$telefon,$email,$card,$user,$pass,$rol);
+    $taskModel->editUser_User($nom,$cognoms,$telefon,$email,$card,$user,$pass);
 
     $response->redirect("location: index.php?r=dades");
     
